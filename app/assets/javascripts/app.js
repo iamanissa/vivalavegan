@@ -2,7 +2,7 @@
 //= require angular-resource.min
 //= require angular-ui-router.min
 
-"use strict"
+"use strict";
 
 (function(){
   angular
@@ -13,7 +13,8 @@
   .config([
     "stateProvider",
     RouterFunction
-  ]);
+  ])
+  
 
   function RouterFunction($stateProvider){
     $stateProvider

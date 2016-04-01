@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Restaurant.create(name: "Johnny Rockets", info: "Johnny Rockets is an American restaurant franchise whose themed decor is based upon 1950s diner-style restaurants.", category: "American", photo_url: "https://upload.wikimedia.org/wikipedia/en/0/0f/Johnny_Rockets_logo.png")

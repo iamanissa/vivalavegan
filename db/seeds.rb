@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Food.destroy_all
 Restaurant.destroy_all
 Food.destroy_all
 
@@ -14,4 +14,8 @@ Restaurant.create(name: "Taco Bell", info: "Taco Bell serves a variety of Tex-Me
 Restaurant.create(name: "Burger King", info: "Burger King, often abbreviated as BK, is an American global chain of hamburger fast food restaurants.", category: "American", photo_url: "http://3.bp.blogspot.com/-kwZJdPLmoSg/Tqr6q2upUXI/AAAAAAAACUc/j2jNOlxAXI0/s1600/Burger+King+Logo.jpg")
 ihop = Restaurant.create(name: "IHOP", info: "International House of Pancakes, usually known as IHOP is a United States-based family restaurant chain that specializes in breakfast foods.", category: "American", photo_url: "http://www.wired.com/wp-content/uploads/2015/06/ihope-orig-inline.jpg")
 
+<<<<<<< HEAD
 Food.create(name: "hash browns", ingredients: "potatoes", tag: "American", image_url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Kartoffelpuffer.jpg", restaurant: ihop)
+=======
+Food.create(name: "hash browns", ingredients: "potatoes", tag: "American", photo_url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Kartoffelpuffer.jpg", restaurant: ihop)
+>>>>>>> master

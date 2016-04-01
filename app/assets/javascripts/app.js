@@ -31,7 +31,7 @@
       vm.restaurants = Restaurant.all;
     }
   ]);
-  
+
   function RouterFunction($stateProvider){
     $stateProvider
     .state("index", {

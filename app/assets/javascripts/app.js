@@ -12,7 +12,21 @@
   ])
   .config([
     "$stateProvider",
-    RouterFunction
+    function ($stateProvider){
+      $stateProvider
+      .state("index", {
+        url: "/",
+        templateUrl: "ng-views/restaurant.index.html",
+        controller: "indexCtrl",
+        controllerAs: "indexVM"
+      })
+      .state("show", {
+        url: "/:id",
+        templateUrl: "ng-views/restaurant.show.html",
+        controller: "showCtrl",
+        controllerAs: "showVM"
+      });
+    }
   ])
   .factory("RestaurantFactory", [
     "$resource",
@@ -30,16 +44,17 @@
       var vm = this;
       vm.restaurants = Restaurant.all;
     }
+  ])
+  .controller("showCtrl", [
+    "RestaurantFactory",
+    "$stateParams",
+    function (Restaurant, $stateParams){
+      var vm = this;
+      Restaurant.all.forEach(function(restaurant){
+        if(restaurant.id == $stateParams.id){
+          vm.restaurant = restaurant;
+        }
+      });
+    }
   ]);
-
-  function RouterFunction($stateProvider){
-    $stateProvider
-    .state("index", {
-      url: "/",
-      templateUrl: "ng-views/restaurant.index.html",
-      // template: "<p> Hello there, are you sleeping?</p>",
-      controller: "indexCtrl",
-      controllerAs: "indexVM"
-    });
-  }
 })();

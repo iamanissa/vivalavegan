@@ -14,18 +14,18 @@
     "$stateProvider",
     RouterFunction
   ])
-  // .factory("RestaurantFactory", [
-  //   "$resource",
-  //   function($resource){
-  //     var Restaurant = $resource("http://localhost:3000/restaurants.json", {}, {
-  //       update: {method: "PUT"}
-  //     });
-  //     Restaurant.all = Restaurant.query();
-  //     return Restaurant;
-  //   }
-  // ])
+  .factory("RestaurantFactory", [
+    "$resource",
+    function($resource){
+      var Restaurant = $resource("http://localhost:3000/restaurants/api", {}, {
+        update: {method: "PUT"}
+      });
+      Restaurant.all = Restaurant.query();
+      return Restaurant;
+    }
+  ])
   .controller("indexCtrl", [
-    // "RestaurantFactory",
+    "RestaurantFactory",
     function(Restaurant){
       var vm = this;
       vm.restaurants = Restaurant.all;
@@ -37,7 +37,7 @@
     .state("index", {
       url: "/",
       templateUrl: "ng-views/restaurant.index.html",
-      template: "<p> Hello there, are you sleeping?</p>",
+      // template: "<p> Hello there, are you sleeping?</p>",
       controller: "indexCtrl",
       controllerAs: "indexVM"
     });

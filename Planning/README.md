@@ -1,12 +1,14 @@
 # Bronze
 
-- User be able to go to index page and see all restaurants that have vegan options.
++ As a user, I should be able to go to index page and see all restaurants that have vegan options, so that I can see where I want to eat.
 
-- User should be able to click on restaurant and go to show page that has available vegan options.  
++ As a user, I should be able to click on a restaurant and go to it's show page that has available vegan options, so I can make an informed decision about my meal.  
 
 - Restaurant show page should display vegan menu options for that restaurant.  
 
-- Tags for standard or custom menu option, or pull it out your ass
+- As a user, I should be able to know what type of menu option a food is based on Tags, so that I will know if a place has more vegan options or less vegan options.
+
+- As a developer, I should divide foods into Tags (standard custom menu option, custom menu option, or limited/no menu options), so that it makes more sense for users.
 
 # Silver
 

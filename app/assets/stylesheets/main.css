@@ -2,7 +2,11 @@
 *= require bootstrap.min
 */
 
+body {
+  text-align: center;
+}
+
 img {
-  height: 50px;
-  width: 50px;
+  height: 200px;
+  width: 200px;
 }

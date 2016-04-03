@@ -14,6 +14,16 @@ johnny = Restaurant.create(name: "Johnny Rockets", info: "Johnny Rockets is an A
 taco = Restaurant.create(name: "Taco Bell", info: "Taco Bell serves a variety of Tex-Mex foods including tacos, burritos, quesadillas, nachos, other specialty items", category: "Mexican", photo_url: "http://goodlogo.com/images/logos/taco_bell_logo_2934.gif")
 bk = Restaurant.create(name: "Burger King", info: "Burger King, often abbreviated as BK, is an American global chain of hamburger fast food restaurants.", category: "American", photo_url: "http://3.bp.blogspot.com/-kwZJdPLmoSg/Tqr6q2upUXI/AAAAAAAACUc/j2jNOlxAXI0/s1600/Burger+King+Logo.jpg")
 ihop = Restaurant.create(name: "IHOP", info: "International House of Pancakes, usually known as IHOP is a United States-based family restaurant chain that specializes in breakfast foods.", category: "American", photo_url: "http://www.wired.com/wp-content/uploads/2015/06/ihope-orig-inline.jpg")
+Restaurant.create(name: "Applebee's", info: "Applebee's is an American Family Restaurant that serves Steaks, Burgers, Hamburgers, and Salads. Most have a bar that serves alcolic beverages.", category: "American", photo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee's.svg/1280px-Applebee's.svg.png")
+Restaurant.create(name: "Bennigans", info: "Bennigan's is an Irish pub-themed casual dining restaurant with a focus on focus on the food, drinks and Irish Hospitality.", category: "American", photo_url: "https://upload.wikimedia.org/wikipedia/commons/2/26/Bennigan's_logo.png")
+Restaurant.create(name: "BJ’s Restaurant and Brewhouse", info: "BJ’s Restaurant and Brewhouse is a family friendly restaurant who puts an inovative spin on america's favorite foods, including deep dish pizzas, salads, sandwiches, pastas and steaks.", category: "American", photo_url: "https://c2.staticflickr.com/2/1174/3169072483_4411b54c4f_b.jpg")
+Restaurant.create(name: "Blaze Pizza", info: "Blaze Pizza is a build your own pizza restaurant focused on artisanal ingredients, a blazing hot oven, and a fast-fire’d, perfectly cooked pizza.", category: "American", photo_url: "https://upload.wikimedia.org/wikipedia/en/0/0f/Johnny_Rockets_logo.png")
+Restaurant.create(name: "Bruegger’s Bagels", info: "Bruegger’s Bagels is committed to serving genuine New York-style bagels and real Vermont cream cheese.", category: "American", photo_url: "https://www.brueggers.com/wp-content/uploads/2015/09/desktopLogo.png")
+
+
+
+
+
 
 # Johnny Rockets Foods
 Food.create(name: "Steamliner Burger", ingredients: "bun, Boca Burger, grilled onions, lettuce, tomato, pickles, mustard", tag: "American", photo_url: "https://s-media-cache-ak0.pinimg.com/736x/04/b8/c1/04b8c1801c5ac492e27fe7fe2f3a5c14.jpg", restaurant: johnny)

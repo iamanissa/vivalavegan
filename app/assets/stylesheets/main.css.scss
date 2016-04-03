@@ -27,6 +27,12 @@ body {
 
 /* Show page */
 img {
-  height: 200px;
-  width: 200px;
+  margin-top: 10px;
+  height: 170px;
+  width: 170px;
+}
+
+/* Restaurant index page */
+.logos{
+  display: inline-flex;
 }

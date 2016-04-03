@@ -2,15 +2,30 @@
   <div data-restaurant="vm.restaurant">
     <img data-ng-src="{{showVM.restaurant.photo_url}}" />
     <h3>{{showVM.restaurant.name}}</h3>
-    <h4>{{showVM.restaurant.info}}</h2>
   </div>
 
-  <div>
+  <section ng-init="tab = 1">
     <ul class="nav nav-pills">
-      <li> <a href ng-click="tab = 1"> Info </a> </li>
-      <li> <a href ng-click="tab = 2"> Ingredients </a> </li>
-      <li> <a href ng-click="tab = 3"> Ratings </a> </li>
-      <li> <a href ng-click="tab = 4"> Comments </a> </li>
+      <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Info </a> </li>
+      <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ingredients </a> </li>
+      <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Ratings </a> </li>
+      <li ng-class="{ active:tab === 4}"> <a href ng-click="tab = 4"> Comments </a> </li>
     </ul>
-    {{tab}}
+  </section>
+
+  <div class="panel" ng-show="tab === 1">
+    <h4>Info</h4>
+    <p>{{showVM.restaurant.info}}</p>
+  </div>
+  <div class="panel" ng-show="tab === 2">
+    <h4>Ingredients</h4>
+    <p>{{showVM.restaurant.info}}</p>
+  </div>
+  <div class="panel" ng-show="tab === 3">
+    <h4>Ratings</h4>
+    <p>No Ratings yet.</p>
+  </div>
+  <div class="panel" ng-show="tab === 4">
+    <h4>Comments</h4>
+    <p>No comments yet. </p>
   </div>

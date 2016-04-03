@@ -13,6 +13,17 @@ body {
 .jumbotron {
 
 }
+/* Index page*/
+
+.cardlist {
+  margin: 20px 0px;
+  .cards {
+    border: 5px solid blue;
+    margin: 0px 15px;
+    height: 200px;
+  }
+}
+
 
 /* Show page */
 img {

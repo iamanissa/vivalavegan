@@ -1,9 +1,9 @@
 <h2>This is the restaurant index page!!</h2>
 
-<div class="container">
-  <div class="logos" data-ng-repeat="restaurant in indexVM.restaurants">
-    <div class="col-lg-8">
-      <a data-ui-sref="show({id: restaurant.id})"><img class="img-responsive" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}"</a>
+<div class="cardlist">
+  <div class="row" data-ng-repeat="restaurants in indexVM.restaurants | groupBy:4">
+    <div class="col-xs-3" ng-repeat="restaurant in restaurants" >
+      <div class="cards"><a data-ui-sref="show({id: restaurant.id})">{{restaurant.name}}</a></div>
     </div>
   </div>
 </div>

@@ -4,3 +4,13 @@
     <h3>{{showVM.restaurant.name}}</h3>
     <h4>{{showVM.restaurant.info}}</h2>
   </div>
+
+  <div>
+    <ul class="nav nav-pills">
+      <li> <a href ng-click="tab = 1"> Info </a> </li>
+      <li> <a href ng-click="tab = 2"> Ingredients </a> </li>
+      <li> <a href ng-click="tab = 3"> Ratings </a> </li>
+      <li> <a href ng-click="tab = 4"> Comments </a> </li>
+    </ul>
+    {{tab}}
+  </div>

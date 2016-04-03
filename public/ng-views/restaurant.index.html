@@ -1,4 +1,17 @@
 <h2>This is the restaurant index page!!</h2>
-  <p data-ng-repeat="restaurant in indexVM.restaurants">
+<div class="cardlist">
+
+<!--
+  <div class="cards" data-ng-repeat="restaurant in indexVM.restaurants">
     <a data-ui-sref="show({id: restaurant.id})">{{restaurant.name}}</a>
-  </p>
+  </div> -->
+
+  <div class="row" data-ng-repeat="restaurants in indexVM.restaurants | groupBy:4">
+    <div class="col-xs-3 letter-box" ng-repeat="restaurant in restaurants" >
+      <div>Restaurant {{$index + 1}} is: <b> {{restaurant.name}}</b></div>
+    </div>
+  </div>
+
+
+
+</div>

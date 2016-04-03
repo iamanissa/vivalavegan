@@ -2,13 +2,15 @@
 //= require angular-resource.min
 //= require angular-ui-router.min
 
+
 "use strict";
 
 (function(){
   angular
   .module("veganapp", [
     "ui.router",
-    "ngResource"
+    "ngResource",
+    "angular.filter"
   ])
   .config([
     "$stateProvider",

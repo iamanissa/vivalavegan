@@ -1,4 +1,5 @@
 <h2>This is the restaurant index page!!</h2>
-  <p data-ng-repeat="restaurant in indexVM.restaurants">
-    <a data-ui-sref="show({id: restaurant.id})">{{restaurant.name}}</a>
-  </p>
+
+  <div data-ng-repeat="restaurant in indexVM.restaurants">
+    <a data-ui-sref="show({id: restaurant.id})"><img ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}"</a>
+  </div>

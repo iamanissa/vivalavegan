@@ -12,7 +12,7 @@
   <div class="cardlist">
     <div data-ng-repeat="food in showVM.foods">
       <p>{{food.name}}</p>
-      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients"></img>
+      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name"></img>
     </div>
   </div>
 
@@ -32,8 +32,8 @@
   </section>
 
   <div class="panel" ng-show="tab === 1">
-    <h4>Info</h4>
-    <p>{{showVM.restaurant.info}}</p>
+    <h4>Info for {{showVM.foodname}}</h4>
+    <p>{{showVM.foodname}}</p>
   </div>
   <div class="panel" ng-show="tab === 2">
     <h4>Ingredients</h4>

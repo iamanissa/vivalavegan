@@ -33,13 +33,25 @@
   .factory("RestaurantFactory", [
     "$resource",
     function($resource){
-      var Restaurant = $resource("http://localhost:3000/restaurants/api", {}, {
+      var Restaurant = $resource("http://localhost:3000/restaurants/:id", {}, {
         update: {method: "PUT"}
       });
       Restaurant.all = Restaurant.query();
       return Restaurant;
     }
   ])
+
+  .factory("FoodsFactory", [
+    "$resource",
+    function($resource){
+      var Food = $resource("http://localhost:3000/restaurants/:restaurant_id/foods/:id", {}, {
+        update: {method: "PUT"}
+      });
+      Food.all = Food.query();
+      return Food;
+    }
+  ])
+
   .controller("indexCtrl", [
     "RestaurantFactory",
     function(Restaurant){
@@ -56,6 +68,9 @@
         if(restaurant.id == $stateParams.id){
           vm.restaurant = restaurant;
         }
+        var currentRestaurant = Restaurant.find(restaurant.id)
+        vm.foods = currentRestaurant.foods
+
       });
     }
   ])

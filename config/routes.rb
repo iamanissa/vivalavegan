@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'restaurants#index'
+  root 'main#index'
   get 'restaurants/api'
   resources :restaurants do
     resources :foods

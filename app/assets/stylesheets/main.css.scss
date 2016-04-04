@@ -16,6 +16,9 @@ body {
 /* Index page*/
 
 .cardlist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;

@@ -1,4 +1,4 @@
-<h2>This is the restaurant index page!!</h2>
+<!-- <h2>This is the restaurant index page!!</h2>
 
 <div class="cardlist">
   <div class="row" data-ng-repeat="restaurants in indexVM.restaurants | groupBy:4">
@@ -6,4 +6,13 @@
       <div class="cards"><a data-ui-sref="show({id: restaurant.id})"><img class="img-rounded" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}"</a></div>
     </div>
   </div>
+</div> -->
+
+
+<div class="cardlist">
+      <div data-ng-repeat="restaurant in indexVM.restaurants" class="cards">
+        <a data-ui-sref="show({id: restaurant.id})">
+          <img class="img-rounded" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}"
+        </a>
+      </div>
 </div>

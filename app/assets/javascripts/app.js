@@ -72,6 +72,7 @@
           vm.foods = Food.query({restaurant_id: $stateParams.id}, function whenFoodIsLoaded(){
             vm.foods.forEach(function(food){
               food.ingredients = food.ingredients.split(",");
+              vm.ingredientlist = vm.foods[0].ingredients
             });
           });
         });

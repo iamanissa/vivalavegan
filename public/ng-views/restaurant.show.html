@@ -7,12 +7,13 @@
   <div class="restaurant_info" data-restaurant="vm.restaurant">
     <img data-ng-src="{{showVM.restaurant.photo_url}}" />
     <h3>{{showVM.restaurant.name}}</h3>
+    <h4>{{showVM.restaurant.info}}</h4>
   </div>
 
   <div class="cardlist">
     <div data-ng-repeat="food in showVM.foods">
       <p>{{food.name}}</p>
-      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients"></img>
+      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name"></img>
     </div>
   </div>
 
@@ -33,7 +34,8 @@
 
   <div class="panel" ng-show="tab === 1">
     <h4>Info</h4>
-    <p>{{showVM.restaurant.info}}</p>
+    <p> {{showVM.foodname}}</p>
+
   </div>
   <div class="panel" ng-show="tab === 2">
     <h4>Ingredients</h4>

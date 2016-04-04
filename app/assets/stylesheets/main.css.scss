@@ -17,6 +17,8 @@ body {
 
 .cardlist {
   margin: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
   .cards {
     border: 5px solid blue;
     margin: 20px 15px;

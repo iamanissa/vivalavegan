@@ -1,0 +1,18 @@
+<h2>Add your destination</h2>
+ <fieldset class="input-group">
+   <input type="text" class="form-control" data-ng-model="restaurant.name" id="name" />
+   <label for="name">Name</label>
+ </fieldset>
+ <fieldset class="input-group">
+   <input type="text" class="form-control" data-ng-model="restaurant.info" id="info" />
+   <label for="info">Info</label>
+ </fieldset>
+ <fieldset class="input-group">
+   <input type="text" class="form-control" data-ng-model="restaurant.category" id="category" />
+   <label for="category">Category</label>
+ </fieldset>
+ <fieldset class="input-group">
+   <input type="text" class="form-control" data-ng-model="restaurant.photo_url" id="photo_url" />
+   <label for="photo_url">Photo URL</label>
+ </fieldset>
+ <button type="button" class="btn btn-primary btn-block" data-ng-click="restaurant.create()">Submit</button>

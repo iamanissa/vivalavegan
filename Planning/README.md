@@ -4,7 +4,7 @@
 
 + As a user, I should be able to click on a restaurant and go to it's show page that has available vegan options, so I can make an informed decision about my meal.  
 
-- Restaurant show page should display vegan menu options for that restaurant.  
++ Restaurant show page should display vegan menu options for that restaurant.  
 
 - As a user, I should be able to know what type of menu option a food is based on Tags, so that I will know if a place has more vegan options or less vegan options.
 
@@ -16,7 +16,7 @@
 
 - User should be able to add, delete, and update a food to a restaurant
 
-- User should be able to search/filter through index of restaurants.
++ User should be able to search/filter through index of restaurants.
 
 - User should be able to search/filter through all of a restaurant’s foods.  
 

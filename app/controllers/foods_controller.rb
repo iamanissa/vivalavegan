@@ -1,6 +1,10 @@
 class FoodsController < ApplicationController
 
   def index
+
+    # @foods = Food.all
+    # render status: 200, json: @foods.to_json
+
     @restaurant = Restaurant.find(params[:restaurant_id])
     @foods = @restaurant.foods
     render status: 200, json: @foods.to_json
@@ -8,8 +12,8 @@ class FoodsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @food = @restaurant.foods.find(params[:id])
-    render status: 200, json: @food.to_json
+    @foods = @restaurant.foods
+    render status: 200, json: @foods.to_json
   end
 
 end

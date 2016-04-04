@@ -16,16 +16,17 @@ body {
 /* Index page*/
 
 .cardlist {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
-  .cards {
-    border: 5px solid blue;
-    margin: 20px 15px;
-    height: 200px;
+  flex-direction: row;
+  justify-content: space-around;
+
+
+.cards {
+  border: 5px solid blue;
+  margin: 20px 15px;
+  height: 200px;
   }
 }
 
@@ -47,4 +48,15 @@ img {
   margin-top: 10px;
   height: 170px;
   width: 170px;
+}
+
+.show_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info_box {
+  display: flex;
+  flex-direction: column;
 }

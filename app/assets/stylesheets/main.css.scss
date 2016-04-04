@@ -6,14 +6,16 @@
 
 
 /* Main header */
+
 body {
   text-align: center;
 }
 
-.jumbotron {
-
+img {
+  margin: 10px;
+  height: 170px;
+  width: 170px;
 }
-/* Index page*/
 
 .cardlist {
   margin: 20px 0px;
@@ -21,19 +23,9 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-
-
-.cards {
-  border: 5px solid blue;
-  margin: 20px 15px;
-  height: 200px;
-  }
 }
 
 /* Restaurant index page */
-.logos{
-  display: inline-flex;
-}
 
 .allnav {
   padding: 5px, 0px;
@@ -43,12 +35,7 @@ body {
   padding: 0px 10px;
 }
 
-/* Show page */
-img {
-  margin-top: 10px;
-  height: 170px;
-  width: 170px;
-}
+/* Restaurant show page */
 
 .show_container {
   display: flex;
@@ -59,4 +46,9 @@ img {
 .info_box {
   display: flex;
   flex-direction: column;
+  width: 600px;
+}
+
+.restaurant_info {
+  width: 300px;
 }

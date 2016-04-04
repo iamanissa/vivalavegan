@@ -60,20 +60,21 @@
     }
   ])
   .controller("showCtrl", [
-    "RestaurantFactory",
-    "$stateParams",
-    function (Restaurant, $stateParams){
-      var vm = this;
-      Restaurant.all.forEach(function(restaurant){
-        if(restaurant.id == $stateParams.id){
-          vm.restaurant = restaurant;
-        }
-        var currentRestaurant = Restaurant.find(restaurant.id)
-        vm.foods = currentRestaurant.foods
+      "RestaurantFactory",
+      "FoodFactory",
+      "$stateParams",
+      function (Restaurant, Food, $stateParams){
+        var vm = this;
+        Restaurant.all.forEach(function(restaurant){
+          if(restaurant.id == $stateParams.id){
+            vm.restaurant = restaurant;
+          }
+          vm.foods = Food.query({restaurant_id: $stateParams.id});
+        });
+      }
+    ]);
 
-      });
-    }
-  ])
+
   // .controller("PanelController", function(){
   //   this.tab = 1;
   //   this.selectTab = function(setTab){

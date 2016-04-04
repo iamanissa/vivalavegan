@@ -6,13 +6,9 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(params[:id])
     render status: 200, json: @restaurant.to_json
-
   end
-
-
 
   def api
     @restaurants = Restaurant.all

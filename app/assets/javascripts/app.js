@@ -71,7 +71,6 @@
           }
           vm.foods = Food.query({restaurant_id: $stateParams.id});
         });
-
       }
     ]);
 

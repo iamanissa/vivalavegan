@@ -1,5 +1,10 @@
-<h2>This is a restaurant show page!!</h2>
-  <div data-restaurant="vm.restaurant">
+<!-- <h2>This is a restaurant show page!!</h2> -->
+
+<div class="show_container">
+
+
+
+  <div class="restaurant_info" data-restaurant="vm.restaurant">
     <img data-ng-src="{{showVM.restaurant.photo_url}}" />
     <h3>{{showVM.restaurant.name}}</h3>
   </div>
@@ -10,6 +15,11 @@
       <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients"></img>
     </div>
   </div>
+
+
+<div class="info_box">
+
+
 
   <section ng-init="tab = 1">
     <ul class="nav nav-pills">
@@ -41,3 +51,5 @@
     <h4>Comments</h4>
     <p>No comments yet. </p>
   </div>
+</div>
+</div>

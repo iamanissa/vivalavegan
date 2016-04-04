@@ -7,7 +7,7 @@
   <div class="cardlist">
     <div data-ng-repeat="food in showVM.foods">
       <p>{{food.name}}</p>
-      <img class="img-rounded" ng-src="{{food.photo_url}}"></img>
+      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients"></img>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
   </div>
   <div class="panel" ng-show="tab === 2">
     <h4>Ingredients</h4>
-    <p>{{showVM.restaurant.info}}</p>
+    <p ng-repeat="ingredient in showVM.ingredientlist">{{ingredient}}</p>
   </div>
   <div class="panel" ng-show="tab === 3">
     <h4>Ratings</h4>

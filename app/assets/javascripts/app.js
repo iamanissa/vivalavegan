@@ -41,10 +41,10 @@
     }
   ])
 
-  .factory("FoodsFactory", [
+  .factory("FoodFactory", [
     "$resource",
     function($resource){
-      var Food = $resource("http://localhost:3000/restaurants/:restaurant_id/foods/:id", {}, {
+      var Food = $resource("http://localhost:3000/restaurants/:restaurant_id/foods/", {}, {
         update: {method: "PUT"}
       });
       Food.all = Food.query();

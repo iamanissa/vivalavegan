@@ -1,16 +1,12 @@
 <h2>This is the restaurant index page!!</h2>
-<main data-ng-controller="indexCtrl as vm">
 
   <!-- input filter -->
   <input type="text" class="form-control" placeholder="Filter by..." data-ng-model="vm.filter_on" />
 
-  <!-- dynamically show each restaurant -->
-  <div class="cardlist">
-    <div class="row" data-ng-repeat="restaurants in indexVM.restaurants | groupBy:4">
-      <div class="col-xs-3" ng-repeat="restaurant in restaurants | filter: vm.filter_on" >
-        <div class="cards"><a data-ui-sref="show({id: restaurant.id})"><img class="img-rounded" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}"</a></div>
+<div class="cardlist">
+      <div data-ng-repeat="restaurant in indexVM.restaurants" class="cards">
+        <a data-ui-sref="show({id: restaurant.id})">
+          <img class="img-rounded" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}"
+        </a>
       </div>
-    </div>
-  </div>
-
-</main>
+</div>

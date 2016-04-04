@@ -29,15 +29,22 @@ body {
   }
 }
 
+/* Restaurant index page */
+.logos{
+  display: inline-flex;
+}
+
+.allnav {
+  padding: 5px, 0px;
+  text-align: center;
+}
+.filtercat li {
+  padding: 0px 10px;
+}
 
 /* Show page */
 img {
   margin-top: 10px;
   height: 170px;
   width: 170px;
-}
-
-/* Restaurant index page */
-.logos{
-  display: inline-flex;
 }

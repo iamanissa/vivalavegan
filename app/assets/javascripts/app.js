@@ -30,6 +30,12 @@
       });
     }
   ])
+
+  .directive("restaurantForm", [
+    "RestaurantFactory",
+    restaurantFormFunction
+  ])
+
   .factory("RestaurantFactory", [
     "$resource",
     function($resource){
@@ -77,8 +83,7 @@
         });
 
       }
-    ]);
-
+    ])
 
   // .controller("PanelController", function(){
   //   this.tab = 1;
@@ -89,4 +94,13 @@
   //     return this.tab === checkTab;
   //   };
   // });
+
+  function restaurantFormFunction(RestaurantFactory){
+    return{
+      templateUrl: "ng-views/restaurant.form.html"
+    }
+  }
+
+
+
 })();

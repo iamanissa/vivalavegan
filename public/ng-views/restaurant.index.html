@@ -1,7 +1,16 @@
 <h2>This is the restaurant index page!!</h2>
 
 <!-- input filter -->
-<input type="text" class="form-control" placeholder="Filter by..." data-ng-model="indexVM.filter_on" />
+
+<input type="text" class="form-control" placeholder="Filter by restaurant name" data-ng-model="indexVM.filter_on" />
+<!-- filter by category -->
+<ul class="categorynav">
+  <li data-ng-click="indexVM.filter_on = 'American'">American</li>
+  <li data-ng-click="indexVM.filter_on = 'Tex-Mex'">Tex-Mex</li>
+  <li data-ng-click="indexVM.filter_on = 'Irish'">Irish</li>
+  <li data-ng-click="indexVM.filter_on = 'Italian'">Italian</li>
+</ul>
+
 
 <div class="cardlist">
   <div data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on" class="cards">

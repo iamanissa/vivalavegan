@@ -26,7 +26,7 @@
         url: "/foodlist",
         templateUrl:"ng-views/foods.index.html",
         controller:"foodsIndexCtrl",
-        controllerAs: "foodShowVM"
+        controllerAs: "foodIndexVM"
       })
       .state("show", {
         url: "/:id",

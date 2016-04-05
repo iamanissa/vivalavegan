@@ -27,7 +27,7 @@
         templateUrl: "ng-views/restaurant.show.html",
         controller: "showCtrl",
         controllerAs: "showVM"
-      });
+      })
     }
   ])
 
@@ -67,34 +67,25 @@
     }
   ])
   .controller("showCtrl", [
-      "RestaurantFactory",
-      "FoodFactory",
-      "$stateParams",
-      function (Restaurant, Food, $stateParams){
-        var vm = this;
-        Restaurant.all.forEach(function(restaurant){
-          if(restaurant.id == $stateParams.id){
-            vm.restaurant = restaurant;
-          }
-          vm.foods = Food.query({restaurant_id: $stateParams.id}, function whenFoodIsLoaded(){
-            vm.foods.forEach(function(food){
-              food.ingredients = food.ingredients.split(",");
-            });
+    "RestaurantFactory",
+    "FoodFactory",
+    "$stateParams",
+    function (Restaurant, Food, $stateParams){
+      var vm = this;
+      Restaurant.all.forEach(function(restaurant){
+        if(restaurant.id == $stateParams.id){
+          vm.restaurant = restaurant;
+        }
+        vm.foods = Food.query({restaurant_id: $stateParams.id}, function whenFoodIsLoaded(){
+          vm.foods.forEach(function(food){
+            food.ingredients = food.ingredients.split(",");
+            vm.ingredientlist = vm.foods[0].ingredients;
           });
+          vm.foodname = vm.foods[0].name;
         });
-
       }
     ])
-
-  // .controller("PanelController", function(){
-  //   this.tab = 1;
-  //   this.selectTab = function(setTab){
-  //     this.tab = setTab;
-  //   };
-  //   this.isSelected = function(checkTab){
-  //     return this.tab === checkTab;
-  //   };
-  // });
+  })
 
   function restaurantFormFunction(Restaurant){
     return{
@@ -111,6 +102,5 @@
       }
     }
   }
-
 
 })();

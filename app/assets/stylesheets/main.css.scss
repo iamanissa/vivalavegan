@@ -6,33 +6,30 @@
 
 
 /* Main header */
+
 body {
   text-align: center;
 }
 
-.jumbotron {
-
+img {
+  margin: 10px;
+  height: 170px;
+  width: 170px;
 }
-/* Index page*/
+
+.selected {
+  border: 2px solid red;
+}
 
 .cardlist {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
-  .cards {
-    border: 5px solid blue;
-    margin: 20px 15px;
-    height: 200px;
-  }
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* Restaurant index page */
-.logos{
-  display: inline-flex;
-}
 
 .allnav {
   padding: 5px, 0px;
@@ -42,9 +39,20 @@ body {
   padding: 0px 10px;
 }
 
-/* Show page */
-img {
-  margin-top: 10px;
-  height: 170px;
-  width: 170px;
+/* Restaurant show page */
+
+.show_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
+.info_box {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+// .restaurant_info {
+//   width: 300px;
+// }

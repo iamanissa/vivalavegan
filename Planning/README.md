@@ -6,9 +6,7 @@
 
 + Restaurant show page should display vegan menu options for that restaurant.  
 
-- As a user, I should be able to know what type of menu option a food is based on Tags, so that I will know if a place has more vegan options or less vegan options.
-
-- As a developer, I should divide foods into Tags (standard custom menu option, custom menu option, or limited/no menu options), so that it makes more sense for users.
+- As a developer, I should divide foods into Tags (standard menu option or build-your-own menu option), so that it makes more sense for users.
 
 # Silver
 

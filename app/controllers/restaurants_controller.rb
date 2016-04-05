@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    # @restaurant = Restaurant.find(params[:id])
     render status: 200, json: @restaurant.to_json
   end
 
@@ -16,13 +16,13 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-  @restaurant = Restaurant.create!(restaurant_params)
-  render json: @restaurant, status: :ok
+    @restaurant = Restaurant.create!(restaurant_params)
+    render json: @restaurant, status: :ok
   end
 
   private
-    def restaurant_params
-      params.permit(:name, :info, :category, :photo_url, :gotchas)
-    end
-
+  def restaurant_params
+    params.permit(:name, :info, :category, :photo_url, :gotchas)
+  end
+  
 end

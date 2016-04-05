@@ -84,8 +84,8 @@
           vm.foodname = vm.foods[0].name;
         });
       }
-    ])
-  })
+    )
+  }])
 
   function restaurantFormFunction(Restaurant){
     return{

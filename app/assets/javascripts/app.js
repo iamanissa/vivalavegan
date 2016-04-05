@@ -22,6 +22,12 @@
         controller: "indexCtrl",
         controllerAs: "indexVM"
       })
+      .state("foodIndex", {
+        url: "/foodlist",
+        templateUrl:"ng-views/foods.index.html",
+        controller:"foodsIndexCtrl",
+        controllerAs: "foodIndexVM"
+      })
       .state("show", {
         url: "/:id",
         templateUrl: "ng-views/restaurant.show.html",
@@ -47,7 +53,7 @@
     }
   ])
 
-  .factory("FoodFactory", [
+  .factory("RestaurantFoodFactory", [
     "$resource",
     function($resource){
       var Food = $resource("http://localhost:3000/restaurants/:restaurant_id/foods/", {}, {
@@ -55,6 +61,17 @@
       });
       Food.all = Food.query();
       return Food;
+    }
+  ])
+
+  .factory("FoodFactory", [
+    "$resource",
+    function($resource){
+      var AllFoods = $resource("http://localhost:3000/foods/all", {}, {
+        update: {method: "PUT"}
+      });
+      AllFoods.all = AllFoods.query();
+      return AllFoods;
     }
   ])
 
@@ -66,9 +83,10 @@
       vm.newRestaurant = new Restaurant();
     }
   ])
+
   .controller("showCtrl", [
     "RestaurantFactory",
-    "FoodFactory",
+    "RestaurantFoodFactory",
     "$stateParams",
     function (Restaurant, Food, $stateParams){
       var vm = this;
@@ -83,9 +101,17 @@
           });
           vm.foodname = vm.foods[0].name;
         });
-      }
-    )
-  }])
+      });
+    }
+  ])
+  .controller("foodsIndexCtrl", [
+    "RestaurantFactory",
+    "FoodFactory",
+    function(Restaurant, AllFoods){
+      var vm = this;
+      vm.foods = AllFoods.all;
+    }
+  ]);
 
   function restaurantFormFunction(Restaurant){
     return{
@@ -98,9 +124,10 @@
           Restaurant.save(scope.restaurant, function(response){
             Restaurant.all.push(response);
           });
-        }
+        };
       }
-    }
+    };
   }
+
 
 })();

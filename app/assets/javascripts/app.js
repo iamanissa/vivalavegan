@@ -63,6 +63,7 @@
     function(Restaurant){
       var vm = this;
       vm.restaurants = Restaurant.all;
+      vm.newRestaurant = new Restaurant();
     }
   ])
   .controller("showCtrl", [
@@ -95,9 +96,19 @@
   //   };
   // });
 
-  function restaurantFormFunction(RestaurantFactory){
+  function restaurantFormFunction(Restaurant){
     return{
-      templateUrl: "ng-views/restaurant.form.html"
+      templateUrl: "ng-views/restaurant.form.html",
+      scope: {
+        restaurant: "="
+      },
+      link: function(scope){
+        scope.create = function(){
+          Restaurant.save(scope.restaurant, function(response){
+            Restaurant.all.push(response);
+          });
+        }
+      }
     }
   }
 

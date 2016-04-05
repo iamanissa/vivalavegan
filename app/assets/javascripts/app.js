@@ -46,8 +46,7 @@
       return Restaurant;
     }
   ])
-
-  .factory("FoodFactory", [
+  .factory("RestaurantFoodFactory", [
     "$resource",
     function($resource){
       var Food = $resource("http://localhost:3000/restaurants/:restaurant_id/foods/", {}, {
@@ -55,6 +54,16 @@
       });
       Food.all = Food.query();
       return Food;
+    }
+  ])
+  .factory("FoodFactory", [
+    "$resource",
+    function($resource){
+      var AllFoods = $resource("http://localhost:3000/foods/all", {}, {
+        update: {method: "PUT"}
+      });
+      AllFoods.all = AllFoods.query();
+      return AllFoods;
     }
   ])
 
@@ -67,7 +76,7 @@
   ])
   .controller("showCtrl", [
     "RestaurantFactory",
-    "FoodFactory",
+    "RestaurantFoodFactory",
     "$stateParams",
     function (Restaurant, Food, $stateParams){
       var vm = this;
@@ -89,9 +98,9 @@
   .controller("foodsIndexCtrl", [
     "RestaurantFactory",
     "FoodFactory",
-    function(Restaurant, Food){
+    function(Restaurant, AllFoods){
       var vm = this;
-      vm.foods = Food.all;
+      vm.foods = AllFoods.all;
     }
   ]);
 

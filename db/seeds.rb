@@ -11,7 +11,7 @@ Food.destroy_all
 
 # Restaurant List
 johnny = Restaurant.create(name: "Johnny Rockets", info: "Johnny Rockets is an American restaurant franchise whose themed decor is based upon 1950s diner-style restaurants.", category: "American", photo_url: "https://upload.wikimedia.org/wikipedia/en/0/0f/Johnny_Rockets_logo.png")
-taco = Restaurant.create(name: "Taco Bell", info: "Taco Bell serves a variety of Tex-Mex foods including tacos, burritos, quesadillas, nachos, other specialty items", category: "Tex-Mex", gotchas: "Just remember to hold the cheese and sour cream and you are good to go. Taco bell doesn't have any other 'Gotchas.' The actually are the first-ever fast food joint to offer menu items certified by the American Vegetarian Association (AVA) so vegan options are within reach!", photo_url: "http://goodlogo.com/images/logos/taco_bell_logo_2934.gif")
+taco = Restaurant.create(name: "Taco Bell", info: "Taco Bell serves a variety of Tex-Mex foods including tacos, burritos, quesadillas, nachos, other specialty items", category: "Tex-Mex", gotchas: "Just remember to hold the cheese and sour cream and you are good to go. Taco bell doesn't have any other 'Gotchas.' They actually are the first-ever fast food joint to offer menu items certified by the American Vegetarian Association (AVA), so vegan options are within reach!", photo_url: "http://goodlogo.com/images/logos/taco_bell_logo_2934.gif")
 bk = Restaurant.create(name: "Burger King", info: "Burger King, often abbreviated as BK, is an American global chain of hamburger fast food restaurants.", category: "American", gotchas: "Burger King's Morningstar Veggie Burger has both milk and eggs. Their oatmeal contains dairy as well.", photo_url: "http://3.bp.blogspot.com/-kwZJdPLmoSg/Tqr6q2upUXI/AAAAAAAACUc/j2jNOlxAXI0/s1600/Burger+King+Logo.jpg")
 ihop = Restaurant.create(name: "IHOP", info: "International House of Pancakes, usually known as IHOP is a United States-based family restaurant chain that specializes in breakfast foods.", category: "American", gotchas: "All IHOP syrups are vegan except for their Butter Pecan Syrup. However, unless you put it on an english muffin (which is listed as vegan), there aren't many things to put syrup on.", photo_url: "http://www.wired.com/wp-content/uploads/2015/06/ihope-orig-inline.jpg")
 panera = Restaurant.create(name: "Panera Bread", info: "Panera Bread is an American chain of bakery-café fast casual restaurants in the United States and Canada.", category: "American", photo_url: "http://tomorrowproducts.com/wp-content/uploads/2016/02/panera-bread-logo-panerabread-logo.jpg")
@@ -36,8 +36,8 @@ Food.create(name: "Premium Latin Rice", ingredients: "Enriched Long Grain Rice, 
 Food.create(name: "Black Beans", ingredients: "Black beans, Water, Onion, Canola Oil, Dextrose, Salt, Natural Flavor, Corn Starch, Corn Oil, Onion Powder, Garlic Powder, Turmeric, Salt, Chili Powder, Garlic, Onion", tag: "Tex-Mex", photo_url: "https://s.graphiq.com/sites/default/files/5806/media/images/t2/Taco_Bell_Black_Beans_7393687.jpg", restaurant: taco)
 
 #Burger King Foods
-Food.create(name: "French Fries", ingredients: "potatoes", tag: "American", photo_url: "http://www.bk.com/sites/default/files/HERO_0001_French_Fries.png", restaurant: bk)
-Food.create(name: "Maple Flavored Oatmeal", ingredients: "Oats, Maple Syrup, Brown Sugar", tag: "American", photo_url: "http://www.bk.com/sites/default/files/HERO_0038_Original_Maple_Flavored_Quaker_Oatmeal.png", restaurant: bk)
+Food.create(name: "French Fries", ingredients: "Potatoes, Soybean Oil or Canola and Palm Oil, Modified Potato Starch, Rice Flour, Potato Dextrin, Salt, Leavening, Dextrose, Xanthan Gum, Sodium Acid Pyrophosphate", tag: "American", photo_url: "https://c1.staticflickr.com/5/4096/5443356231_b46e006e02_b.jpg", restaurant: bk)
+Food.create(name: "Maple Flavored Oatmeal", ingredients: "Oats, Maple Syrup, Brown Sugar", tag: "American", photo_url: "https://c1.staticflickr.com/7/6089/6119337131_f8b62b15b1_b.jpg", restaurant: bk)
 
 #IHOP Foods
 Food.create(name: "Hash Browns", ingredients: "potatoes", tag: "American", photo_url: "http://www.foxvalleyfoodie.com/wp-content/uploads/2012/06/homemade-shredded-hash-browns.jpg", restaurant: ihop)
@@ -54,6 +54,5 @@ Food.create(name: "Greek Salad Without cheese", ingredients: "Romaine Lettuce, T
 
 
 #Bennigan's Foods
-Food.create(name: "Boca Burger (no cheese)", ingredients: "none", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)
-Food.create(name: "Garden Salad", ingredients: "none", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)
-Food.create(name: "Roasted Vegetable Primavera (w/o Lemon Butter Sauce)", ingredients: "none", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)
+Food.create(name: "Boca Burger (no cheese)", ingredients: "Verify with waiter that they use Vegan Boca Burgers at their location", tag: "American", photo_url: "http://www.almostvegan.com/archives/images/bocaburgers.gif", restaurant: bennigans)
+Food.create(name: "Roasted Vegetable Primavera (w/o Lemon Butter Sauce)", ingredients: "Oven-roasted onions, Red bell peppers, Zucchini, Mushrooms, F ettuccini.", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)

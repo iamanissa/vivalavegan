@@ -1,15 +1,37 @@
 <!-- <h2>This is a restaurant show page!!</h2> -->
 
-<div class="show_container">
 
 
+<!-- Restaurant info  -->
+<div class="container-fluid" data-restaurant="vm.restaurant">
+  <div class="row">
+    <div class="col-xs-3">
+      <img data-ng-src="{{showVM.restaurant.photo_url}}" />
+    </div>
 
-  <div class="restaurant_info" data-restaurant="vm.restaurant">
-    <img data-ng-src="{{showVM.restaurant.photo_url}}" />
-    <h3>{{showVM.restaurant.name}}</h3>
-    <h4>{{showVM.restaurant.info}}</h4>
+    <div class="col-xs-9" ng-init="button = 1">
+      <!-- show options -->
+      <div ng-show="button === 1">
+        <h4>{{showVM.restaurant.name}}</h4>
+        <p>{{showVM.restaurant.info}}</p>
+      </div>
+      <div ng-show="button === 2">
+        <h4>Gotchas</h4>
+        <!-- <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p> -->
+        <p>{{showVM.restaurant.gotchas}}</p>
+      </div>
+
+      <!-- buttons -->
+      <span class="infobtns">
+        <button type="button" class="btn btn-primary-outline" data-ng-click="button = 1"><i class="fa fa-info-circle"></i></button>
+        <button type="button" class="btn btn-primary-outline" data-ng-click="button = 2"><i class="fa fa-exclamation-triangle"></i></button>
+      </span>
+    </div>
   </div>
+</div>
 
+<!-- Food show -->
+<div class="show_container">
   <div class="cardlist" ng-init="selection = { selectedNode:  null }">
     <div data-ng-repeat="food in showVM.foods">
       <p>{{food.name}}</p>
@@ -18,39 +40,34 @@
   </div>
 
 
-<div class="info_box">
+  <div class="info_box">
 
 
 
-  <section ng-init="tab = 1">
-    <ul class="nav nav-pills">
-      <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Info </a> </li>
-      <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ingredients </a> </li>
-      <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Gotchas </a> </li>
-      <li ng-class="{ active:tab === 4}"> <a href ng-click="tab = 4"> Ratings </a> </li>
-      <li ng-class="{ active:tab === 5}"> <a href ng-click="tab = 5"> Comments </a> </li>
-    </ul>
-  </section>
+    <section ng-init="tab = 1">
+      <ul class="nav nav-pills">
+        <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Info </a> </li>
+        <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ingredients </a> </li>
+        <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Ratings </a> </li>
+        <li ng-class="{ active:tab === 4}"> <a href ng-click="tab = 4"> Comments </a> </li>
+      </ul>
+    </section>
 
-  <div class="panel" ng-show="tab === 1">
-    <h4>Info for {{showVM.foodname}}</h4>
-    <p>{{showVM.foodname}}</p>
+    <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
+      <h4>Info for {{showVM.foodname}}</h4>
+      <p>{{showVM.foodname}}</p>
+    </div>
+    <div class="panel" ng-show="tab === 2">
+      <h4>Ingredients for {{showVM.foodname}}</h4>
+      <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
+    </div>
+    <div class="panel" ng-show="tab === 3">
+      <h4>Ratings</h4>
+      <p>No Ratings yet.</p>
+    </div>
+    <div class="panel" ng-show="tab === 4">
+      <h4>Comments</h4>
+      <p>No comments yet. </p>
+    </div>
   </div>
-  <div class="panel" ng-show="tab === 2">
-    <h4>Ingredients</h4>
-    <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
-  </div>
-  <div class="panel" ng-show="tab === 3">
-    <h4>Ingredients</h4>
-    <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p>
-  </div>
-  <div class="panel" ng-show="tab === 4">
-    <h4>Ratings</h4>
-    <p>No Ratings yet.</p>
-  </div>
-  <div class="panel" ng-show="tab === 5">
-    <h4>Comments</h4>
-    <p>No comments yet. </p>
-  </div>
-</div>
 </div>

@@ -73,8 +73,8 @@
           vm.foods.forEach(function(food){
             food.ingredients = food.ingredients.split(",");
             vm.ingredientlist = vm.foods[0].ingredients;
-
           });
+          vm.foodname = vm.foods[0].name;
         });
       });
     }

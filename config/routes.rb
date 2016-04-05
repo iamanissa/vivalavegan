@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'main#index'
-  get 'restaurants/api'
+  get 'foods/all'
   resources :restaurants do
     resources :foods
   end

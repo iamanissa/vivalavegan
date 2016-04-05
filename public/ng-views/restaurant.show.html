@@ -9,18 +9,16 @@
       <img data-ng-src="{{showVM.restaurant.photo_url}}" />
     </div>
 
-    <div class="col-xs-9">
-      <!-- <h3>{{showVM.restaurant.name}}</h3>
-      <h4>{{showVM.restaurant.info}}</h4> -->
-
-      <div class="panel" ng-show="button === 1">
+    <div class="col-xs-9" ng-init="button = 1">
+      <!-- show options -->
+      <div ng-show="button === 1">
         <h4>{{showVM.restaurant.name}}</h4>
-        <p>{{showVM.restaurant.info}}}</p>
+        <p>{{showVM.restaurant.info}}</p>
       </div>
-      <div class="panel" ng-show="button === 2">
+      <div ng-show="button === 2">
         <h4>Gotchas</h4>
-        <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p>
-        <p>{{showVm.restaurant.gotchas}}</p>
+        <!-- <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p> -->
+        <p>{{showVM.restaurant.gotchas}}</p>
       </div>
 
       <!-- buttons -->
@@ -51,30 +49,24 @@
       <ul class="nav nav-pills">
         <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Info </a> </li>
         <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ingredients </a> </li>
-        <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Gotchas </a> </li>
-        <li ng-class="{ active:tab === 4}"> <a href ng-click="tab = 4"> Ratings </a> </li>
-        <li ng-class="{ active:tab === 5}"> <a href ng-click="tab = 5"> Comments </a> </li>
+        <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Ratings </a> </li>
+        <li ng-class="{ active:tab === 4}"> <a href ng-click="tab = 4"> Comments </a> </li>
       </ul>
     </section>
 
-    <div class="panel" ng-show="tab === 1">
+    <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
       <h4>Info for {{showVM.foodname}}</h4>
       <p>{{showVM.foodname}}</p>
     </div>
     <div class="panel" ng-show="tab === 2">
-      <h4>Ingredients</h4>
+      <h4>Ingredients for {{showVM.foodname}}</h4>
       <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
     </div>
     <div class="panel" ng-show="tab === 3">
-      <h4>Ingredients</h4>
-      <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p>
-
-    </div>
-    <div class="panel" ng-show="tab === 4">
       <h4>Ratings</h4>
       <p>No Ratings yet.</p>
     </div>
-    <div class="panel" ng-show="tab === 5">
+    <div class="panel" ng-show="tab === 4">
       <h4>Comments</h4>
       <p>No comments yet. </p>
     </div>

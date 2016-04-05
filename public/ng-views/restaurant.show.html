@@ -37,12 +37,13 @@
     <p>{{showVM.foodname}}</p>
   </div>
   <div class="panel" ng-show="tab === 2">
-    <h4>Ingredients</h4>
+    <h4>Ingredients for {{showVM.foodname}}</h4>
     <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
   </div>
   <div class="panel" ng-show="tab === 3">
-    <h4>Ingredients</h4>
+    <h4>Gotchas</h4>
     <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p>
+    <p>{{showVM.restaurant.gotchas}}</p>
   </div>
   <div class="panel" ng-show="tab === 4">
     <h4>Ratings</h4>

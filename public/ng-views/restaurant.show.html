@@ -10,10 +10,10 @@
     <h4>{{showVM.restaurant.info}}</h4>
   </div>
 
-  <div class="cardlist">
+  <div class="cardlist" ng-init="selection = { selectedNode:  null }">
     <div data-ng-repeat="food in showVM.foods">
       <p>{{food.name}}</p>
-      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name"></img>
+      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name; selection.selectedNode = food" ng-class="{selected: selection.selectedNode == food}"></img>
     </div>
   </div>
 

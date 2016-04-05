@@ -1,4 +1,4 @@
-<h2>Add your destination</h2>
+<h2>Add a restaurant</h2>
  <fieldset class="input-group">
    <input type="text" class="form-control" data-ng-model="restaurant.name" id="name" />
    <label for="name">Name</label>
@@ -14,5 +14,9 @@
  <fieldset class="input-group">
    <input type="text" class="form-control" data-ng-model="restaurant.photo_url" id="photo_url" />
    <label for="photo_url">Photo URL</label>
+ </fieldset>
+ <fieldset class="input-group">
+   <input type="text" class="form-control" data-ng-model="restaurant.gotchas" id="gotchas" />
+   <label for="gotchas">Gotchas</label>
  </fieldset>
  <button type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>

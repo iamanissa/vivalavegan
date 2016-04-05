@@ -12,4 +12,9 @@ class FoodsController < ApplicationController
     render status: 200, json: @foods.to_json
   end
 
+  def all
+    @foods = Food.all
+    render status: 200, json: @foods.to_json
+  end
+
 end

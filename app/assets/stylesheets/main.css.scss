@@ -17,6 +17,10 @@ img {
   width: 170px;
 }
 
+.selected {
+  border: 2px solid red;
+}
+
 .cardlist {
   margin: 20px 0px;
   display: flex;

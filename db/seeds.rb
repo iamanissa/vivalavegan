@@ -36,8 +36,8 @@ Food.create(name: "Premium Latin Rice", ingredients: "Enriched Long Grain Rice, 
 Food.create(name: "Black Beans", ingredients: "Black beans, Water, Onion, Canola Oil, Dextrose, Salt, Natural Flavor, Corn Starch, Corn Oil, Onion Powder, Garlic Powder, Turmeric, Salt, Chili Powder, Garlic, Onion", tag: "Tex-Mex", photo_url: "https://s.graphiq.com/sites/default/files/5806/media/images/t2/Taco_Bell_Black_Beans_7393687.jpg", restaurant: taco)
 
 #Burger King Foods
-Food.create(name: "French Fries", ingredients: "potatoes", tag: "American", photo_url: "http://www.bk.com/sites/default/files/HERO_0001_French_Fries.png", restaurant: bk)
-Food.create(name: "Maple Flavored Oatmeal", ingredients: "Oats, Maple Syrup, Brown Sugar", tag: "American", photo_url: "http://www.bk.com/sites/default/files/HERO_0038_Original_Maple_Flavored_Quaker_Oatmeal.png", restaurant: bk)
+Food.create(name: "French Fries", ingredients: "Potatoes, Soybean Oil or Canola and Palm Oil, Modified Potato Starch, Rice Flour, Potato Dextrin, Salt, Leavening, Dextrose, Xanthan Gum, Sodium Acid Pyrophosphate", tag: "American", photo_url: "https://c1.staticflickr.com/5/4096/5443356231_b46e006e02_b.jpg", restaurant: bk)
+Food.create(name: "Maple Flavored Oatmeal", ingredients: "Oats, Maple Syrup, Brown Sugar", tag: "American", photo_url: "https://c1.staticflickr.com/7/6089/6119337131_f8b62b15b1_b.jpg", restaurant: bk)
 
 #IHOP Foods
 Food.create(name: "Hash Browns", ingredients: "potatoes", tag: "American", photo_url: "http://www.foxvalleyfoodie.com/wp-content/uploads/2012/06/homemade-shredded-hash-browns.jpg", restaurant: ihop)
@@ -54,6 +54,5 @@ Food.create(name: "Greek Salad Without cheese", ingredients: "Romaine Lettuce, T
 
 
 #Bennigan's Foods
-Food.create(name: "Boca Burger (no cheese)", ingredients: "none", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)
-Food.create(name: "Garden Salad", ingredients: "none", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)
-Food.create(name: "Roasted Vegetable Primavera (w/o Lemon Butter Sauce)", ingredients: "none", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)
+Food.create(name: "Boca Burger (no cheese)", ingredients: "Verify with waiter that they use Vegan Boca Burgers at their location", tag: "American", photo_url: "http://www.almostvegan.com/archives/images/bocaburgers.gif", restaurant: bennigans)
+Food.create(name: "Roasted Vegetable Primavera (w/o Lemon Butter Sauce)", ingredients: "Oven-roasted onions, Red bell peppers, Zucchini, Mushrooms, F ettuccini.", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: bennigans)

@@ -27,9 +27,15 @@
         templateUrl: "ng-views/restaurant.show.html",
         controller: "showCtrl",
         controllerAs: "showVM"
-      });
+      })
     }
   ])
+
+  .directive("restaurantForm", [
+    "RestaurantFactory",
+    restaurantFormFunction
+  ])
+
   .factory("RestaurantFactory", [
     "$resource",
     function($resource){
@@ -57,6 +63,7 @@
     function(Restaurant){
       var vm = this;
       vm.restaurants = Restaurant.all;
+      vm.newRestaurant = new Restaurant();
     }
   ])
   .controller("showCtrl", [
@@ -76,7 +83,24 @@
           });
           vm.foodname = vm.foods[0].name;
         });
-      });
+      }
+    ])
+  })
+
+  function restaurantFormFunction(Restaurant){
+    return{
+      templateUrl: "ng-views/restaurant.form.html",
+      scope: {
+        restaurant: "="
+      },
+      link: function(scope){
+        scope.create = function(){
+          Restaurant.save(scope.restaurant, function(response){
+            Restaurant.all.push(response);
+          });
+        }
+      }
     }
-  ]);
+  }
+
 })();

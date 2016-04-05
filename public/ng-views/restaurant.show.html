@@ -10,8 +10,24 @@
     </div>
 
     <div class="col-xs-9">
-      <h3>{{showVM.restaurant.name}}</h3>
-      <h4>{{showVM.restaurant.info}}</h4>
+      <!-- <h3>{{showVM.restaurant.name}}</h3>
+      <h4>{{showVM.restaurant.info}}</h4> -->
+
+      <div class="panel" ng-show="button === 1">
+        <h4>{{showVM.restaurant.name}}</h4>
+        <p>{{showVM.restaurant.info}}}</p>
+      </div>
+      <div class="panel" ng-show="button === 2">
+        <h4>Gotchas</h4>
+        <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p>
+        <p>{{showVm.restaurant.gotchas}}</p>
+      </div>
+
+      <!-- buttons -->
+      <span class="infobtns">
+        <button type="button" class="btn btn-primary-outline" data-ng-click="button = 1"><i class="fa fa-info-circle"></i></button>
+        <button type="button" class="btn btn-primary-outline" data-ng-click="button = 2"><i class="fa fa-exclamation-triangle"></i></button>
+      </span>
     </div>
   </div>
 </div>
@@ -52,6 +68,7 @@
     <div class="panel" ng-show="tab === 3">
       <h4>Ingredients</h4>
       <p>A Gotcha is something you think is vegan, but the restaurant added non-vegan products to it, so that it is no longer vegan.</p>
+
     </div>
     <div class="panel" ng-show="tab === 4">
       <h4>Ratings</h4>

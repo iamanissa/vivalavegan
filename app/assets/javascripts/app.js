@@ -115,6 +115,7 @@
 
   function restaurantFormFunction(Restaurant){
     return{
+      restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",
       scope: {
         restaurant: "="

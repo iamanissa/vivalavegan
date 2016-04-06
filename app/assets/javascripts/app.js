@@ -128,9 +128,13 @@
           });
         };
         scope.update = function (){
-          Restaurant.update({id: scope.restaurant.id}, scope.destination, function(response){
-            console.log("Update Successful!");
+          // console.log(scope.restaurant);
+          scope.restaurant.$update({id: scope.restaurant.id}, function(response){
+            console.log(response);
           });
+          //  Restaurant.update({id: scope.restaurant.id}, scope.restaurant, function(response){
+          //   console.log("Update Successful!");
+          // });
         }
       }
     };

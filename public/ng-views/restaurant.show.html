@@ -68,4 +68,7 @@
   </div>
 </div>
 
-<restaurant-form data-restaurant="showVM.restaurant" data-form-method="edit"></restaurant-form>
+<div>
+  <button ng-click="formHidden = !formHidden">Edit Restaurant</button>
+  <restaurant-form data-restaurant="showVM.newRestaurant" data-form-method="edit"></restaurant-form>
+</div>

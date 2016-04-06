@@ -17,16 +17,12 @@ img {
   width: 170px;
 }
 
-.selected {
-  border: 2px solid red;
-}
-
 .cardlist {
   margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 /* Restaurant index page */
@@ -62,17 +58,27 @@ img {
 
 /* Restaurant show page */
 
-.show_container {
+.row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 10px;
+  padding: 20px;
 }
 
 .info_box {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
+  width: 50%;
+  padding: 20px;
 }
+
+.info_gotchas {
+  width: 50%
+}
+
+.infobtns {
+  margin: 10px;
+}
+
 
 /* Food index page */
 

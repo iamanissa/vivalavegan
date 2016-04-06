@@ -1,39 +1,61 @@
 <!-- <h2>This is the restaurant index page!!</h2> -->
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+
+
 <nav class="navbar navbar-default">
   <div class="container-fluid allnav">
-    <div class="navbar-header">
-      Filter by:
-    </div>
-    <ul class="nav navbar-nav filtercat">
+
+    <div class="toolbar">
       <!-- filter by category -->
-      <li class="active" data-ng-click="indexVM.filter_on = ''">All</li>
-      <li class="active" data-ng-click="indexVM.filter_on = 'American'">American</li>
-      <li data-ng-click="indexVM.filter_on = 'Tex-Mex'">Tex-Mex</li>
-      <li data-ng-click="indexVM.filter_on = 'Irish'">Irish</li>
-      <li data-ng-click="indexVM.filter_on = 'Italian'">Italian</li>
-      <li>
-        <!-- input filter -->
-        <input type="text" class="form-control" placeholder="Restaurant Name?" data-ng-model="indexVM.filter_on" />
-      </li>
-      <li>
-        <a data-ui-sref="foodIndex" href="#">List of All Foods</a>
-      </li>
-    </ul>
+      <div>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = ''">All</button>
+            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'American'">American</button>
+            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'Tex-Mex'">Tex-Mex</button>
+            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'Irish'">Irish</button>
+            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'Italian'">Italian</button>
+          </span>
+          <!-- input filter -->
+          <input type="text" class="form-control" placeholder="Enter Restaurant Name" data-ng-model="indexVM.filter_on" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" >
+              <a data-ui-sref="foodIndex" href="#">List of All Foods</a>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
+    <md-content>
+      <div class="cardlist">
+        <md-card data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on">
+          <a style="text-decoration: none;" data-ui-sref="show({id: restaurant.id})">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{restaurant.name}}</span>
+              <span class="md-subhead">{{restaurant.category}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-md card-media">
+                <img ng-src="{{restaurant.photo_url}}">
+              </div>
+            </md-card-title-media>
+          </md-card-title>
+        </a>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button>Edit</md-button>
+            <md-button>Delete</md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </md-content>
 
-
-<div class="cardlist">
-  <div data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on" class="cards">
-    <a data-ui-sref="show({id: restaurant.id})">
-      <img class="img-rounded" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}">
-    </a>
-  </div>
-</div>
 
 <div>
   <p>You can Add a Restaurant to the List by clicking <button ng-click="formHidden = !formHidden">Here</button></p>
-  <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden"></restaurant-form>
+  <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden" ></restaurant-form>
 </div>

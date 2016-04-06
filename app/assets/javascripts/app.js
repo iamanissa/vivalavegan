@@ -10,7 +10,8 @@
   .module("veganapp", [
     "ui.router",
     "ngResource",
-    "angular.filter"
+    "angular.filter",
+    "ngMaterial"
   ])
   .config([
     "$stateProvider",
@@ -39,7 +40,7 @@
 
   .directive("restaurantForm", [
     "RestaurantFactory",
-    restaurantFormFunction
+    restaurantFormFunction,
   ])
 
   .factory("RestaurantFactory", [
@@ -114,6 +115,11 @@
     function(Restaurant, AllFoods){
       var vm = this;
       vm.foods = AllFoods.all;
+      vm.foods.forEach(function(food){
+        console.log("hey there!");
+        food.restaurant = Restaurant.get({id: food.restaurant_id});
+        console.log(food.restaurant);
+      });
     }
   ]);
 
@@ -121,6 +127,12 @@
     return{
       restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",
+      // controller:function($scope){
+      //   $scope.processForm = function(){
+      //     $scope.formHidden = true;
+      //   };
+      // },
+      // controllerAs: 'formdir',
       scope: {
         restaurant: "=",
         formMethod: "@"

@@ -17,16 +17,12 @@ img {
   width: 170px;
 }
 
-.selected {
-  border: 2px solid red;
-}
-
 .cardlist {
   margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 /* Restaurant index page */
@@ -38,21 +34,65 @@ img {
 .filtercat li {
   padding: 0px 10px;
 }
+.restimg{
+  width:100px;
+  height:100px;
+}
+.toolbar
+{
+  position: relative;
+  display: table;
+}
+
+.toolbar > div
+{
+  display: table-cell;
+  padding-right: 8px;
+  vertical-align: top;
+}
+.toolbar input[type="text"] {
+   height: 38px;
+   line-height: 14px;
+   border: 0;
+}
 
 /* Restaurant show page */
 
-.show_container {
+.row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 10px;
+  padding: 20px;
+  max-height: 200px;
 }
 
 .info_box {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
+  width: 50%;
+  padding: 20px;
 }
 
-// .restaurant_info {
-//   width: 300px;
-// }
+.info_gotchas {
+  width: 50%
+}
+
+.infobtns {
+  margin: 10px;
+}
+
+
+/* Food index page */
+
+.cardstyle{
+  margin: 10px 5px;
+  max-width: 205px;
+  border: 1px solid rgb(198, 204, 194);
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  padding: 0px 2px;
+}
+#titlewrap{
+  word-wrap: break-word;
+}

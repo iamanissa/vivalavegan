@@ -118,7 +118,8 @@
       restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",
       scope: {
-        restaurant: "="
+        restaurant: "=",
+        formMethod: "@"
       },
       link: function(scope){
         scope.create = function(){

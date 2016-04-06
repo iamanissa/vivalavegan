@@ -35,7 +35,7 @@
     <div class="col-xs-7">
       <div class="card-deck">
         <div class="cardlist" ng-init="selection = { selectedNode:  null }">
-          <div data-ng-repeat="food in showVM.foods" class="foodcards">
+          <div data-ng-repeat="food in showVM.foods" class="cardstyle">
             <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name; selection.selectedNode = food" ng-class="{selected: selection.selectedNode == food}"></img>
             <div class="card-block">
               <h4 id="titlewrap" class="card-title">{{food.name}}</h4>

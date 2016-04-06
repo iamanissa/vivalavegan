@@ -38,6 +38,27 @@ img {
 .filtercat li {
   padding: 0px 10px;
 }
+.restimg{
+  width:100px;
+  height:100px;
+}
+.toolbar
+{
+  position: relative;
+  display: table;
+}
+
+.toolbar > div
+{
+  display: table-cell;
+  padding-right: 8px;
+  vertical-align: top;
+}
+.toolbar input[type="text"] {
+   height: 38px;
+   line-height: 14px;
+   border: 0;
+}
 
 /* Restaurant show page */
 
@@ -55,7 +76,7 @@ img {
 
 /* Food index page */
 
-.foodcards{
+.cardstyle{
   margin: 10px 5px;
   max-width: 205px;
   border: 1px solid rgb(198, 204, 194);

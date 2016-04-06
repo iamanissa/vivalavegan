@@ -20,6 +20,11 @@ class RestaurantsController < ApplicationController
     render json: @restaurant, status: :ok
   end
 
+  def update
+    @restuarant.update!(restaurant_params)
+    render json: @restaurant, status: :ok
+  end
+
   private
   def restaurant_params
     params.permit(:name, :info, :category, :photo_url, :gotchas)

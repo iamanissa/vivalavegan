@@ -31,10 +31,8 @@
 </div> <!-- End Restaurant Info -->
 
 <!-- Edit Restaurant Button -->
-<div>
-  <button ng-click="formHidden = !formHidden">Edit Restaurant</button>
-  <restaurant-form data-restaurant="showVM.restaurant" ng-show="formHidden" data-form-method="edit"></restaurant-form>
-</div>
+  <button ng-click="showVM.formHidden = !showVM.formHidden"><i class="fa fa-pencil-square-o"></i></button>
+  <restaurant-form data-restaurant="showVM.restaurant" ng-show="showVM.formHidden" data-form-method="edit"></restaurant-form>
 <!-- End of Restaurant Button  -->
 
 

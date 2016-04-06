@@ -126,6 +126,11 @@
             Restaurant.all.push(response);
           });
         };
+        scope.update = function (){
+          Restaurant.update({id: scope.restaurant.id}, scope.destination, function(response){
+            console.log("Update Successful!");
+          });
+        }
       }
     };
   }

@@ -1,6 +1,6 @@
 <!-- <h2>This is a restaurant show page!!</h2> -->
 
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
 
 <!-- Restaurant info  -->
 <div class="container-fluid" data-restaurant="vm.restaurant">
@@ -28,39 +28,50 @@
       </span>
     </div>
   </div>
-</div>
 
-<!-- Food show -->
-<div class="show_container">
-  <div class="cardlist" ng-init="selection = { selectedNode:  null }">
-    <div data-ng-repeat="food in showVM.foods">
-      <p>{{food.name}}</p>
-      <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name; selection.selectedNode = food" ng-class="{selected: selection.selectedNode == food}"></img>
+
+  <!-- Food show -->
+  <div class="row">
+    <div class="col-xs-7">
+      <div class="card-deck">
+        <div class="cardlist" ng-init="selection = { selectedNode:  null }">
+          <div data-ng-repeat="food in showVM.foods" class="foodcards">
+            <img class="img-rounded" ng-src="{{food.photo_url}}" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name; selection.selectedNode = food" ng-class="{selected: selection.selectedNode == food}"></img>
+            <div class="card-block">
+              <h4 id="titlewrap" class="card-title">{{food.name}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-<!-- ingredients, comments, and ratings view -->
-  <div class="info_box">
-    <section ng-init="tab = 1">
-      <ul class="nav nav-pills">
-        <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 1"> Ingredients </a> </li>
-        <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 2"> Ratings </a> </li>
-        <li ng-class="{ active:tab === 4}"> <a href ng-click="tab = 3"> Comments </a> </li>
-      </ul>
-    </section>
 
 
-    <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
-      <h4>Ingredients for {{showVM.foodname}}</h4>
-      <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
-    </div>
-    <div class="panel" ng-show="tab === 2">
-      <h4>Ratings</h4>
-      <p>No Ratings yet.</p>
-    </div>
-    <div class="panel" ng-show="tab === 3">
-      <h4>Comments</h4>
-      <p>No comments yet. </p>
+
+    <!-- ingredients, comments, and ratings view -->
+    <div class="col-xs-4">
+      <div class="info_box">
+        <section ng-init="tab = 1">
+          <ul class="nav nav-pills">
+            <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Ingredients </a> </li>
+            <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ratings </a> </li>
+            <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Comments </a> </li>
+          </ul>
+        </section>
+
+
+        <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
+          <h4>Ingredients for {{showVM.foodname}}</h4>
+          <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
+        </div>
+        <div class="panel" ng-show="tab === 2">
+          <h4>Ratings</h4>
+          <p>No Ratings yet.</p>
+        </div>
+        <div class="panel" ng-show="tab === 3">
+          <h4>Comments</h4>
+          <p>No comments yet. </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

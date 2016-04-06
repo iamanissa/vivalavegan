@@ -26,30 +26,33 @@
           </span>
         </div>
       </div>
-      <!-- <div>
-        <div class="input-group input-group-sm">
-          <input type="text" class="form-control" placeholder="Enter a Restaurant Name" data-ng-model="indexVM.filter_on" />
-        </div>
-      </div> -->
-
-
-      <!-- link to food index view page -->
-      <!-- <button class="btn btn-default btn-small" >
-        <a data-ui-sref="foodIndex" href="#">List of All Foods</a>
-      </button> -->
     </div>
   </div>
 </nav>
 
-
-
-<div class="cardlist">
-  <div data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on" class="cardstyle">
-    <a data-ui-sref="show({id: restaurant.id})">
-      <img class="img-rounded restimg" ng-src="{{restaurant.photo_url}}" alt="{{restaurant.name}}">
-    </a>
+<md-content>
+  <div class="cardlist">
+    <md-card data-ng-repeat="restaurant in indexVM.restaurants">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{restaurant.name}}</span>
+          <span class="md-subhead">{{restaurant.category}}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-md card-media">
+            <img ng-src="{{restaurant.photo_url}}">
+          </div>
+        </md-card-title-media>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button><a ui-sref="show({id: restaurant.id})">View</a></md-button>
+        <md-button>Edit</md-button>
+        <md-button>Delete</md-button>
+      </md-card-actions>
+    </md-card>
   </div>
-</div>
+</md-content>
+
 
 <div>
   <p>You can Add a Restaurant to the List by clicking <button ng-click="formHidden = !formHidden">Here</button></p>

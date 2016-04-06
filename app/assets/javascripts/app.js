@@ -10,7 +10,8 @@
   .module("veganapp", [
     "ui.router",
     "ngResource",
-    "angular.filter"
+    "angular.filter",
+    "ngMaterial"
   ])
   .config([
     "$stateProvider",

@@ -33,6 +33,7 @@
     <md-content>
       <div class="cardlist">
         <md-card data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on">
+          <a style="text-decoration: none;" data-ui-sref="show({id: restaurant.id})">
           <md-card-title>
             <md-card-title-text>
               <span class="md-headline">{{restaurant.name}}</span>
@@ -44,8 +45,8 @@
               </div>
             </md-card-title-media>
           </md-card-title>
+        </a>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button><a data-ui-sref="show({id: restaurant.id})">View</a></md-button>
             <md-button>Edit</md-button>
             <md-button>Delete</md-button>
           </md-card-actions>

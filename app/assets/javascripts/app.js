@@ -110,6 +110,11 @@
     function(Restaurant, AllFoods){
       var vm = this;
       vm.foods = AllFoods.all;
+      vm.foods.forEach(function(food){
+        console.log("hey there!");
+        food.restaurant = Restaurant.get({id: food.restaurant_id});
+        console.log(food.restaurant);
+      });
     }
   ]);
 

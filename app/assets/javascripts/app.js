@@ -102,6 +102,10 @@
           vm.foodname = vm.foods[0].name;
         });
       });
+      // add destroy method for restaurant
+      vm.destroy = function(index){
+        vm.restaurants.splice(index, 1);
+      }
     }
   ])
   .controller("foodsIndexCtrl", [

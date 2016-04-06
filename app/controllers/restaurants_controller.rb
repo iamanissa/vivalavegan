@@ -21,7 +21,8 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    @restuarant.update!(restaurant_params)
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.update!(restaurant_params)
     render json: @restaurant, status: :ok
   end
 

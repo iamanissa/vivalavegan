@@ -14,6 +14,7 @@
     <div class="infobtns">
       <button type="button" class="btn btn-primary-outline" data-ng-click="button = 1"><i class="fa fa-info-circle"></i></button>
       <button type="button" class="btn btn-primary-outline" data-ng-click="button = 2"><i class="fa fa-exclamation-triangle"></i></button>
+      <button type="button" class="btn btn-primary-outline" data-ng-click="button = 3"><i class="fa fa-pencil-square-o"></i></button>
     </div>
 
 
@@ -25,15 +26,12 @@
       <h4>Gotchas</h4>
       <p>{{showVM.restaurant.gotchas}}</p>
     </div>
-
-
+    <!-- <div> -->
+      <restaurant-form data-restaurant="showVM.restaurant" ng-show="button === 3" data-form-method="edit"></restaurant-form>
+    <!-- </div> -->
   </div> <!-- End info and gotchas -->
 </div> <!-- End Restaurant Info -->
 
-<!-- Edit Restaurant Button -->
-  <button ng-click="showVM.formHidden = !showVM.formHidden"><i class="fa fa-pencil-square-o"></i></button>
-  <restaurant-form data-restaurant="showVM.restaurant" ng-show="showVM.formHidden" data-form-method="edit"></restaurant-form>
-<!-- End of Restaurant Button  -->
 
 
 <!-- Food show -->

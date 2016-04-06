@@ -21,8 +21,15 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    @restuarant.update!(restaurant_params)
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.update!(restaurant_params)
     render json: @restaurant, status: :ok
+  end
+
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    render json: {success: true}, status: :ok
   end
 
   private

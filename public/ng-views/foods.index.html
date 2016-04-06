@@ -1,7 +1,12 @@
 <h3>I'm the foods index page. Yay me!</h3>
-
-<div>
-  <div data-ng-repeat="food in foodIndexVM.foods">
-    {{food.name}}
+<div class="card-deck">
+  <div class="cardlist">
+    <div data-ng-repeat="food in foodIndexVM.foods" class="cardstyle">
+      <img class="card-img-top img-rounded" ng-src="{{food.photo_url}}" alt="{{food.name}}">
+      <div class="card-block">
+        <h4 id="titlewrap" class="card-title">{{food.name}}</h4>
+        <p class="card-subtitle text-muted">{{food.restaurant.name}}</p>
+      </div>
+    </div>
   </div>
 </div>

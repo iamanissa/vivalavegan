@@ -103,6 +103,10 @@
           vm.foodname = vm.foods[0].name;
         });
       });
+      // add destroy method for restaurant
+      vm.destroy = function(index){
+        vm.restaurants.splice(index, 1);
+      }
     }
   ])
   .controller("foodsIndexCtrl", [
@@ -130,7 +134,8 @@
       // },
       // controllerAs: 'formdir',
       scope: {
-        restaurant: "="
+        restaurant: "=",
+        formMethod: "@"
       },
       link: function(scope){
         scope.create = function(){
@@ -138,6 +143,15 @@
             Restaurant.all.push(response);
           });
         };
+        scope.update = function (){
+          // console.log(scope.restaurant);
+          scope.restaurant.$update({id: scope.restaurant.id}, function(response){
+            console.log(response);
+          });
+          //  Restaurant.update({id: scope.restaurant.id}, scope.restaurant, function(response){
+          //   console.log("Update Successful!");
+          // });
+        }
       }
     };
   }

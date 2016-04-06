@@ -46,7 +46,7 @@
   .factory("RestaurantFactory", [
     "$resource",
     function($resource){
-      var Restaurant = $resource("http://localhost:3000/restaurants/:id", {}, {
+      var Restaurant = $resource("https://viva-la-vegan.herokuapp.com/restaurants/:id", {}, {
         update: {method: "PUT"}
       });
       Restaurant.all = Restaurant.query();
@@ -57,7 +57,7 @@
   .factory("RestaurantFoodFactory", [
     "$resource",
     function($resource){
-      var Food = $resource("http://localhost:3000/restaurants/:restaurant_id/foods/", {}, {
+      var Food = $resource("https://viva-la-vegan.herokuapp.com/restaurants/:restaurant_id/foods/", {}, {
         update: {method: "PUT"}
       });
       Food.all = Food.query();
@@ -68,7 +68,7 @@
   .factory("FoodFactory", [
     "$resource",
     function($resource){
-      var AllFoods = $resource("http://localhost:3000/foods/all", {}, {
+      var AllFoods = $resource("https://viva-la-vegan.herokuapp.com/foods/all", {}, {
         update: {method: "PUT"}
       });
       AllFoods.all = AllFoods.query();

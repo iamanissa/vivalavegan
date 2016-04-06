@@ -39,7 +39,7 @@
 
   .directive("restaurantForm", [
     "RestaurantFactory",
-    restaurantFormFunction
+    restaurantFormFunction,
   ])
 
   .factory("RestaurantFactory", [
@@ -117,6 +117,12 @@
     return{
       restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",
+      // controller:function($scope){
+      //   $scope.processForm = function(){
+      //     $scope.formHidden = true;
+      //   };
+      // },
+      // controllerAs: 'formdir',
       scope: {
         restaurant: "="
       },

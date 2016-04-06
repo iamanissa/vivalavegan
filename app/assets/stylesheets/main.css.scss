@@ -22,7 +22,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* Restaurant index page */
@@ -83,7 +83,7 @@ img {
 .cardstyle{
   margin: 10px 5px;
   max-width: 205px;
-  height: 275px;
+  // height: 285px;
   border: 1px solid rgb(198, 204, 194);
   border-radius: 10px;
   background: #fff;

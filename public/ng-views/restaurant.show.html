@@ -4,75 +4,77 @@
 
 <!-- Restaurant info  -->
 <div class="row" data-restaurant="vm.restaurant">
-    <div>
-      <img data-ng-src="{{showVM.restaurant.photo_url}}" />
+  <div>
+    <img data-ng-src="{{showVM.restaurant.photo_url}}" />
+  </div>
+
+  <div class="info_gotchas"ng-init="button = 1">
+
+    <!-- buttons -->
+    <div class="infobtns">
+      <button type="button" class="btn btn-primary-outline" data-ng-click="button = 1"><i class="fa fa-info-circle"></i></button>
+      <button type="button" class="btn btn-primary-outline" data-ng-click="button = 2"><i class="fa fa-exclamation-triangle"></i></button>
     </div>
 
-    <div class="info_gotchas"ng-init="button = 1">
 
-      <!-- buttons -->
-      <div class="infobtns">
-        <button type="button" class="btn btn-primary-outline" data-ng-click="button = 1"><i class="fa fa-info-circle"></i></button>
-        <button type="button" class="btn btn-primary-outline" data-ng-click="button = 2"><i class="fa fa-exclamation-triangle"></i></button>
-      </div>
-
-
-      <div ng-show="button === 1">
-        <h4>{{showVM.restaurant.name}}</h4>
-        <p>{{showVM.restaurant.info}}</p>
-      </div>
-      <div ng-show="button === 2">
-        <h4>Gotchas</h4>
-        <p>{{showVM.restaurant.gotchas}}</p>
-      </div>
+    <div ng-show="button === 1">
+      <h4>{{showVM.restaurant.name}}</h4>
+      <p>{{showVM.restaurant.info}}</p>
+    </div>
+    <div ng-show="button === 2">
+      <h4>Gotchas</h4>
+      <p>{{showVM.restaurant.gotchas}}</p>
+    </div>
 
 
-    </div> <!-- End info and gotchas -->
+  </div> <!-- End info and gotchas -->
 </div> <!-- End Restaurant Info -->
 
 
 
 
-  <!-- Food show -->
-  <div class="row">
+<!-- Food show -->
+<div class="row">
 
-        <div class="cardlist" ng-init="selection = { selectedNode:  null }">
-          <div data-ng-repeat="food in showVM.foods" class="cardstyle" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name">
-            <img class="img-rounded" ng-src="{{food.photo_url}}" ></img>
-            <div class="card-block">
-              <h4 id="titlewrap" class="card-title">{{food.name}}</h4>
-            </div>
-          </div>
+  <div>
+    <div class="cardlist">
+      <div data-ng-repeat="food in showVM.foods" class="cardstyle" ng-click="showVM.ingredientlist = food.ingredients; showVM.foodname = food.name">
+        <img class="img-rounded" ng-src="{{food.photo_url}}" ></img>
+        <div>
+          <h4 id="titlewrap">{{food.name}}</h4>
         </div>
+      </div>
+    </div>
+  </div>
 
 
-<!-- <restaurant-form data-restaurant="showVM.restaurant" data-form-method="edit"></restaurant-form> -->
+  <!-- <restaurant-form data-restaurant="showVM.restaurant" data-form-method="edit"></restaurant-form> -->
 
-    <!-- ingredients, comments, and ratings view -->
-      <div class="info_box">
-        <section ng-init="tab = 1">
-          <ul class="nav nav-pills">
-            <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Ingredients </a> </li>
-            <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ratings </a> </li>
-            <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Comments </a> </li>
-          </ul>
-        </section>
+  <!-- ingredients, comments, and ratings view -->
+  <div class="info_box">
+    <section ng-init="tab = 1">
+      <ul class="nav nav-pills">
+        <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Ingredients </a> </li>
+        <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ratings </a> </li>
+        <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Comments </a> </li>
+      </ul>
+    </section>
 
-        <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
-          <h4>Ingredients for {{showVM.foodname}}</h4>
-          <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
-        </div>
-        <div class="panel" ng-show="tab === 2">
-          <h4>Ratings</h4>
-          <p>No Ratings yet.</p>
-        </div>
-        <div class="panel" ng-show="tab === 3">
-          <h4>Comments</h4>
-          <p>No comments yet. </p>
-        </div>
-      </div> <!-- end info box -->
+    <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
+      <h4>Ingredients for {{showVM.foodname}}</h4>
+      <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
+    </div>
+    <div class="panel" ng-show="tab === 2">
+      <h4>Ratings</h4>
+      <p>No Ratings yet.</p>
+    </div>
+    <div class="panel" ng-show="tab === 3">
+      <h4>Comments</h4>
+      <p>No comments yet. </p>
+    </div>
+  </div> <!-- end info box -->
 
 
 
-  </div> <!-- end second row -->
+</div> <!-- end second row -->
 </div> <!-- end page container -->

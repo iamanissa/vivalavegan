@@ -10,7 +10,8 @@
   .module("veganapp", [
     "ui.router",
     "ngResource",
-    "angular.filter"
+    "angular.filter",
+    "ngMaterial"
   ])
   .config([
     "$stateProvider",
@@ -110,6 +111,7 @@
     function(Restaurant, AllFoods){
       var vm = this;
       vm.foods = AllFoods.all;
+        
     }
   ]);
 

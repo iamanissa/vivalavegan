@@ -45,22 +45,8 @@
           </div>
         </div>
 
-    <div class="panel" ng-init="showVM.foodname = food.name[0]" ng-show="tab === 1">
-      <h4>Ingredients for {{showVM.foodname}}</h4>
-      <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
-    </div>
-    <div class="panel" ng-show="tab === 2">
-      <h4>Ratings</h4>
-      <p>No Ratings yet.</p>
-    </div>
-    <div class="panel" ng-show="tab === 3">
-      <h4>Comments</h4>
-      <p>No comments yet.</p>
-    </div>
-  </div>
-</div>
 
-<restaurant-form data-restaurant="showVM.restaurant" data-form-method="edit"></restaurant-form>
+<!-- <restaurant-form data-restaurant="showVM.restaurant" data-form-method="edit"></restaurant-form> -->
 
     <!-- ingredients, comments, and ratings view -->
       <div class="info_box">

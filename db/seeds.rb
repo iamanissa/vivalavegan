@@ -67,12 +67,9 @@ Food.create(name: "Sofrita", ingredients: "Organic Tofu, Roasted Tomatoes, Onion
 Food.create(name: "Burrito", ingredients: "Beans, Rice, Green peppers, Red onions, Salt, Oregano, Rice bran oil, Guacamole", tag: "Tex-Mex", photo_url: "http://esq.h-cdn.co/assets/cm/15/06/54d460caaf74c_-_sofritas_burrito_fixed_at.png", restaurant: chipotle)
 Food.create(name: "Chips and Guac", ingredients: "Flour, Water, Canola oil, Avocados, Lime juice, Cilantro, Red onion, Jalapeño, Kosher salt", tag: "Tex-Mex", photo_url: "http://www.catholic.org/files/images/media//14310092694686_700.jpg", restaurant: chipotle)
 
-
+#Chili's Foods
 
 Food.create(name: "Caribbean Salad", ingredients: "Romaine lettuce, Iceberg salad, Napa cabbage, Fresh mint, Mandarin oranges, Cilantro, Red bell pepper, Dried cherries, Green onions, Pineapple wedges, Sesame seeds", tag: "Tex-Mex", photo_url: "http://storage.googleapis.com/bro-cdn1/zgrid/themes/10470/images/items/salads/salad_caribbean.jpg", restaurant: chilis)
-
 Food.create(name: "Santa Fe Salad", ingredients: "Cilantro, Romaine lettuce, Black beans, Whole kernel corn, Avocado, Tomato, Red onion", tag: "Tex-Mex", photo_url: "http://storage.googleapis.com/bro-cdn1/zgrid/themes/10470/images/items/salads/salad_santafe.jpg", restaurant: chilis)
-
 Food.create(name: "Quesadilla Explosion Salad", ingredients: "Corn relish, Cilantro, Diced tomato, Tortilla strips, Citrus-balsamic dressing", tag: "Tex-Mex", photo_url: "http://storage.googleapis.com/bro-cdn1/zgrid/themes/10470/images/items/salads/quesa_exp.jpg", restaurant: chilis)
-
 Food.create(name: "Asparagus and Garlic Roasted Tomatoes", ingredients: "Asparagus, Cherry tomatoes, Extra virgin olive oil, Garlic, Salt and pepper", tag: "Tex-Mex", photo_url: "http://jeanetteshealthyliving.com/wp-content/uploads/2012/03/RoastedAsparagusCherryTomatoes11.jpg", restaurant: chilis)

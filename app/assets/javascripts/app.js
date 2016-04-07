@@ -137,7 +137,15 @@
         })
       });
     }
-  ]);
+  ])
+  .controller("ReviewController", function(){
+    var vm = this;
+    vm.review = {};
+    vm.addReview = function(food){
+      food.reviews.push(vm.review);
+      vm.review = {};
+    }
+  });
 
   function restaurantFormFunction(Restaurant){
     return{

@@ -55,8 +55,7 @@
     <section ng-init="tab = 1">
       <ul class="nav nav-pills">
         <li ng-class="{ active:tab === 1}"> <a href ng-click="tab = 1"> Ingredients </a> </li>
-        <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ratings </a> </li>
-        <li ng-class="{ active:tab === 3}"> <a href ng-click="tab = 3"> Comments </a> </li>
+        <li ng-class="{ active:tab === 2}"> <a href ng-click="tab = 2"> Ratings & Comments </a> </li>
       </ul>
     </section>
 
@@ -64,14 +63,30 @@
       <h4>Ingredients for {{showVM.foodname}}</h4>
       <p ng-repeat="ingredient in showVM.ingredientlist track by $index">{{ingredient}}</p>
     </div>
+
     <div class="panel" ng-show="tab === 2">
-      <h4>Ratings</h4>
-      <p>No Ratings yet.</p>
+      <h4>Ratings & comments</h4>
+      <p ng-repeat="food in showVM.foods"></p>
+      <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(food)">
+        <blockquote>
+          <b>Stars: {{reviewCtrl.review.stars}}</b>
+          Review: {{reviewCtrl.review.body}}
+          <cite>by: {{reviewCtrl.review.author}}</cite>
+        </blockquote>
+        <select ng-model="reviewCtrl.review.stars">
+          <option value="1">1 star</option>
+          <option value="2">2 stars</option>
+          <option value="3">3 stars</option>
+          <option value="4">4 stars</option>
+          <option value="5">5 stars</option>
+        </select>
+          <textarea placeholder="Enter a short review of the food" ng-model="reviewCtrl.review.body"></textarea>
+          <label>by:</label>
+          <input placeholder="enter your first name..." ng-model="reviewCtrl.review.author" type="email" />
+          <input type="submit" value="Submit">
+      </form>
     </div>
-    <div class="panel" ng-show="tab === 3">
-      <h4>Comments</h4>
-      <p>No comments yet. </p>
-    </div>
+
 
   </div> <!-- end info box -->
 

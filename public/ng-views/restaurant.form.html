@@ -3,26 +3,21 @@
   <h2 data-ng-switch-default>Add a restaurant</h2>
 </div>
 
-<div class="container col-md-4 col-sm-offset-4">
+<div class="formcontainer">
   <fieldset class="input-group">
-    <input type="text" class="form-control" data-ng-model="restaurant.name" id="name" />
-    <label for="name">Name</label>
+    <input type="text" placeholder="Name" class="form-control" data-ng-model="restaurant.name" id="name" />
   </fieldset>
   <fieldset class="input-group">
-    <input type="text" class="form-control" data-ng-model="restaurant.info" id="info" />
-    <label for="info">Info</label>
+    <input type="text" placeholder="Info" class="form-control" data-ng-model="restaurant.info" id="info" />
   </fieldset>
   <fieldset class="input-group">
-    <input type="text" class="form-control" data-ng-model="restaurant.category" id="category" />
-    <label for="category">Category</label>
+    <input type="text" placeholder="Category" class="form-control" data-ng-model="restaurant.category" id="category" />
   </fieldset>
   <fieldset class="input-group">
-    <input type="text" class="form-control" data-ng-model="restaurant.photo_url" id="photo_url" />
-    <label for="photo_url">Photo URL</label>
+    <input type="text" placeholder="Photo URL" class="form-control" data-ng-model="restaurant.photo_url" id="photo_url" />
   </fieldset>
   <fieldset class="input-group">
-    <input type="text" class="form-control" data-ng-model="restaurant.gotchas" id="gotchas" />
-    <label for="gotchas">Gotchas</label>
+    <input type="text" placeholder="Gotchas" class="form-control" data-ng-model="restaurant.gotchas" id="gotchas" />
   </fieldset>
 
   <div data-ng-switch="formMethod">

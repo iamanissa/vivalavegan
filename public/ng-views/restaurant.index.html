@@ -3,32 +3,48 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
 
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid allnav">
-
-    <div class="toolbar">
-      <!-- filter by category -->
+<nav class="navbar navbar-input-group">
+  <div class="toolbar">
+    <div class="input-group-btn">
       <div>
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = ''">All</button>
-            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'American'">American</button>
-            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'Tex-Mex'">Tex-Mex</button>
-            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'Irish'">Irish</button>
-            <button class="btn btn-default btn-small" data-ng-click="indexVM.filter_on = 'Italian'">Italian</button>
-          </span>
-          <!-- input filter -->
-          <input type="text" class="form-control" placeholder="Enter Restaurant Name" data-ng-model="indexVM.filter_on" />
-          <span class="input-group-btn">
-            <button class="btn btn-default" >
-              <a data-ui-sref="foodIndex" href="#">List of All Foods</a>
-            </button>
-          </span>
-        </div>
+        <button class="btn btn-secondary" ng-click="formHidden = !formHidden"><a>Add Restaurant</a></button>
+        <button class="btn btn-secondary" >
+          <a data-ui-sref="foodIndex">List of All Foods</a>
+        </button>
       </div>
+      <input style="width:333px; margin: 0 auto;" type="text" class="form-control" placeholder="Search by Restaurant Name" data-ng-model="indexVM.filter_on" />
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''">Filter By:</button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''"><a>All</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'American'"><a>American</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Tex-Mex'"><a>Tex-Mex</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Irish'"><a>Irish</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Italian'"><a>Italian</a></button>
+
+
     </div>
+
   </div>
 </nav>
+
+
+<!-- <form class="navbar-form navbar-left navbar-input-group" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search for awesome stuff">
+  </div>
+  <button type="submit" class="btn btn-default">Search</button>
+</form> -->
+
+
+
+
+
+
+
+
+
+<div>
+  <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden" ></restaurant-form>
+</div>
 
     <md-content>
       <div class="cardlist">
@@ -55,7 +71,7 @@
     </md-content>
 
 
-<div>
+<!-- <div>
   <p>You can Add a Restaurant to the List by clicking <button ng-click="formHidden = !formHidden">Here</button></p>
   <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden" ></restaurant-form>
-</div>
+</div> -->

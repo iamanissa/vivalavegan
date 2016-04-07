@@ -82,6 +82,13 @@
       var vm = this;
       vm.restaurants = Restaurant.all;
       vm.newRestaurant = new Restaurant();
+      vm.destroy = function(restaurant, $index){
+        Restaurant.remove({id: restaurant.id}, function(response){
+          if(response.success){
+            Restaurant.all.splice($index, 1);
+          }
+        });
+      }
     }
   ])
 

@@ -27,6 +27,7 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
     render json: {success: true}, status: :ok
   end

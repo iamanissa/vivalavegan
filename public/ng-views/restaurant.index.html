@@ -30,6 +30,7 @@
   </div>
 </nav>
 
+
 <md-content>
   <div class="cardlist">
     <md-card data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on">
@@ -48,11 +49,12 @@
       </a>
       <md-card-actions layout="row" layout-align="end center">
         <md-button>Edit</md-button>
-        <md-button>Delete</md-button>
+        <md-button data-ng-click="indexVM.destroy(restaurant, $index)">Delete</md-button>
       </md-card-actions>
     </md-card>
   </div>
 </md-content>
+
 
 
 <div>

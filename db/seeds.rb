@@ -23,7 +23,6 @@ chilis = Restaurant.create(name: "Chili's", info: "Chili's Grill & Bar is an Ame
 chipotle = Restaurant.create(name: "Chipotle", info: "Chipotle Mexican Grill, Inc. is a chain of fast food restaurants in the United States, United Kingdom, Canada, Germany, and France, specializing in Mission burritos and tacos.", category: "Tex-Mex", gotchas: "Chipotle's honey vinaigrette is not vegan as it contains a honey base. In most locations you can either order Sofritas or all veggie. Ordering veggie gets you free guacamole.", photo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Chipotle_Mexican_Grill_logo.svg/1024px-Chipotle_Mexican_Grill_logo.svg.png")
 olivegarden = Restaurant.create(name: "Olive Garden", info: "Olive Garden is an American casual dining restaurant chain specializing in Italian-American cuisine.", category: "Italian", photo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/OliveGardenNewLogo2014.png/225px-OliveGardenNewLogo2014.png")
 
-
 # Johnny Rockets Foods
 Food.create(name: "Steamliner Burger", ingredients: "Bun, Boca Burger, Grilled Onions, Lettuce, Tomato, Pickles, Mustard", tag: "American", photo_url: "https://s-media-cache-ak0.pinimg.com/736x/04/b8/c1/04b8c1801c5ac492e27fe7fe2f3a5c14.jpg", restaurant: johnny)
 Food.create(name: "American Fries", ingredients: "Potatoes", tag: "American", photo_url: "http://lootlo.pk/wp-content/uploads/2015/06/American-Fries-998.png", restaurant: johnny)
@@ -52,7 +51,25 @@ Food.create(name: "Low Fat Garden Vegetable Soup Without Pesto", ingredients: "W
 Food.create(name: "Classic Salad", ingredients: "Romaine Lettuce, Tomatoes, Baby Spinach, Field Greens, Cucumber, Red Onion. ", photo_url: "https://cleaneatingveggiegirl.files.wordpress.com/2013/01/panera-bread-3.jpg", restaurant: panera)
 Food.create(name: "Greek Salad Without cheese", ingredients: "Romaine Lettuce, Tomatoes, Soybean Oil, Water, Distilled Vinegar, Olive Pomace Oil, Cider Vinegar, Salt, Dehydrated Garlic, Black Pepper, Lemon Juice Concentrate, Dehydrated Tarragon, Dehydrated Oregano, Citric Acid, Dehydrated Parsley, Dehydrated Rosemary, Dehydrated Thyme, Dehydrated Bay Leaves, Red Onion, Pepperoncini, Kalmata Olives, Black Pepper.", tag: "American", photo_url: "http://www.thefussiesteater.com/wp-content/uploads/2012/04/IMG_5109.jpg", restaurant: panera)
 
-
 #Bennigan's Foods
 Food.create(name: "Boca Burger (no cheese)", ingredients: "Verify with waiter that they use Vegan Boca Burgers at their location", tag: "American", photo_url: "http://www.almostvegan.com/archives/images/bocaburgers.gif", restaurant: bennigans)
 Food.create(name: "Roasted Vegetable Primavera (w/o Lemon Butter Sauce)", ingredients: "Oven-roasted onions, Red bell peppers, Zucchini, Mushrooms, Fettuccini.", tag: "American", photo_url: "https://thegourmandmom.files.wordpress.com/2010/11/0252.jpg", restaurant: bennigans)
+
+#Olive Garden Foods
+Food.create(name: "Breaksticks", ingredients: "dry yeast, granulated sugar, bread flour, salt, water", tag: "Italian", photo_url: "http://media.olivegarden.com/en_us/images/product/d-Extra-Breadsticks-dpv.jpg", restaurant: olivegarden)
+Food.create(name: "Garden Primavera ", ingredients: "Request no cheese, Onions, Carrots, Broccoli, Mushrooms, Squash, Garlic, Tomatoes, Parsley, Oregano, Rosemary, Red pepper flakes", tag: "Italian", photo_url: "http://media.olivegarden.com/en_us/images/product/d-gf-rotini-with-primavera-dpv.jpg", restaurant: olivegarden)
+Food.create(name: "Artichoke Fritti", ingredients: "Request no cheese or aioli sauce, Yeast, Flour, Parsley, Garlic, Salt and Pepper, Artichokes, Lemon, Olive Oil, Chili flakes", tag: "Italian", photo_url: "http://3.bp.blogspot.com/--N0o_87Xjr0/VNT0qfCeKGI/AAAAAAAAQRw/quhw2iQq-fE/s1600/Artichoke%2BFritti.JPG", restaurant: olivegarden)
+Food.create(name: "Bruschetta Caprese", ingredients: "Request no cheese, Balsamic vinegar, Mozarella, Basil, Cherry tomatoes, French baguette ", tag: "Italian", photo_url: "http://media.olivegarden.com/en_us/images/product/Bruschetta_Caprese_136_dpv.jpg", restaurant: olivegarden)
+
+#Chipotle Foods
+
+Food.create(name: "Sofrita", ingredients: "Organic Tofu, Roasted Tomatoes, Onions, Bell and Poblano Peppers, Chipotle Chile, Rice Bran Oil, Cumin, Garlic, Oregano, Black Pepper, Tomato Paste, Red Wine Vinegar, Salt", tag: "Tex-Mex", photo_url: "http://mms.businesswire.com/bwapps/mediaserver/ViewMedia?mgid=356114&vid=4", restaurant: chipotle)
+Food.create(name: "Burrito", ingredients: "Beans, Rice, Green peppers, Red onions, Salt, Oregano, Rice bran oil, Guacamole", tag: "Tex-Mex", photo_url: "http://esq.h-cdn.co/assets/cm/15/06/54d460caaf74c_-_sofritas_burrito_fixed_at.png", restaurant: chipotle)
+Food.create(name: "Chips and Guac", ingredients: "Flour, Water, Canola oil, Avocados, Lime juice, Cilantro, Red onion, Jalapeño, Kosher salt", tag: "Tex-Mex", photo_url: "http://www.catholic.org/files/images/media//14310092694686_700.jpg", restaurant: chipotle)
+
+#Chili's Foods
+
+Food.create(name: "Caribbean Salad", ingredients: "Romaine lettuce, Iceberg salad, Napa cabbage, Fresh mint, Mandarin oranges, Cilantro, Red bell pepper, Dried cherries, Green onions, Pineapple wedges, Sesame seeds", tag: "Tex-Mex", photo_url: "http://storage.googleapis.com/bro-cdn1/zgrid/themes/10470/images/items/salads/salad_caribbean.jpg", restaurant: chilis)
+Food.create(name: "Santa Fe Salad", ingredients: "Cilantro, Romaine lettuce, Black beans, Whole kernel corn, Avocado, Tomato, Red onion", tag: "Tex-Mex", photo_url: "http://storage.googleapis.com/bro-cdn1/zgrid/themes/10470/images/items/salads/salad_santafe.jpg", restaurant: chilis)
+Food.create(name: "Quesadilla Explosion Salad", ingredients: "Corn relish, Cilantro, Diced tomato, Tortilla strips, Citrus-balsamic dressing", tag: "Tex-Mex", photo_url: "http://storage.googleapis.com/bro-cdn1/zgrid/themes/10470/images/items/salads/quesa_exp.jpg", restaurant: chilis)
+Food.create(name: "Asparagus and Garlic Roasted Tomatoes", ingredients: "Asparagus, Cherry tomatoes, Extra virgin olive oil, Garlic, Salt and pepper", tag: "Tex-Mex", photo_url: "http://jeanetteshealthyliving.com/wp-content/uploads/2012/03/RoastedAsparagusCherryTomatoes11.jpg", restaurant: chilis)

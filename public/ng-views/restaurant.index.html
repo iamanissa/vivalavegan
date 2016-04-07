@@ -23,28 +23,33 @@
 </nav>
 
 <div>
-  <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden" ></restaurant-form>
+  <div style="display:inline-block;">
+    <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden" ></restaurant-form>
+  </div>
 </div>
 
-<md-content>
-  <div class="cardlist">
-    <md-card data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on">
-      <a style="text-decoration: none;" data-ui-sref="show({id: restaurant.id})">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{restaurant.name}}</span>
-            <span class="md-subhead">{{restaurant.category}}</span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-md card-media">
-              <img ng-src="{{restaurant.photo_url}}">
-            </div>
-          </md-card-title-media>
-        </md-card-title>
-      </a>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button data-ng-click="indexVM.destroy(restaurant, $index)">Delete</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-</md-content>
+<div>
+  <md-content>
+    <div class="cardlist">
+      <md-card data-ng-repeat="restaurant in indexVM.restaurants | filter: indexVM.filter_on">
+        <a style="text-decoration: none;" data-ui-sref="show({id: restaurant.id})">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{restaurant.name}}</span>
+              <span class="md-subhead">{{restaurant.category}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-md card-media">
+                <img ng-src="{{restaurant.photo_url}}">
+              </div>
+            </md-card-title-media>
+          </md-card-title>
+        </a>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Edit</md-button>
+          <md-button data-ng-click="indexVM.destroy(restaurant, $index)">Delete</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </md-content>
+</div>

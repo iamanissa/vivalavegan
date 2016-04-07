@@ -1,12 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-/*Colors*/
-
-
-/* Main header */
-
 body {
   text-align: center;
 }
@@ -17,17 +11,25 @@ img {
   width: 170px;
 }
 
+input{
+   text-align:center;
+}
+
 .jumbotron {
 background-image: url("http://i.imgur.com/xEUHEQB.jpg");
 background-size: cover;
 }
-
 
 .cardlist {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+}
+
+.formcontainer {
+  display: flex;
+  flex-direction: row;
 }
 
 /* Restaurant index page */
@@ -70,12 +72,6 @@ background-size: cover;
 .input-group-btn * {
   margin: 5px;
 }
-
-input{
-   text-align:center;
-   width: 50px;
-}
-
 
 
 

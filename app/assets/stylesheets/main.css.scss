@@ -24,7 +24,6 @@ background-size: cover;
 
 
 .cardlist {
-  margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -61,6 +60,24 @@ background-size: cover;
    line-height: 14px;
    border: 0;
 }
+
+.input-group-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.input-group-btn * {
+  margin: 5px;
+}
+
+input{
+   text-align:center;
+   width: 50px;
+}
+
+
+
 
 /* Restaurant show page */
 

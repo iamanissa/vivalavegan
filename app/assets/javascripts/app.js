@@ -114,11 +114,36 @@
     "FoodFactory",
     function(Restaurant, AllFoods){
       var vm = this;
-      vm.foods = AllFoods.all;
-      vm.foods.forEach(function(food){
-        console.log("hey there!");
-        food.restaurant = Restaurant.get({id: food.restaurant_id});
-        console.log(food.restaurant);
+      vm.restaurants = Restaurant.query();
+      vm.getRestaurantName = function(restaurants, restaurantId){
+        var restaurantName = "";
+        restaurants.forEach(function(restaurant){
+          if(restaurant.id === restaurantId){
+            restaurantName = restaurant.name;
+          }
+        })
+        return restaurantName;
+      }
+      vm.foods = AllFoods.query(function(){
+        vm.foods.forEach(function(food){
+          food.restaurantName = vm.getRestaurantName(vm.restaurants, food.restaurant_id);
+        })
+      });
+
+
+      vm.getRestaurantID = function(restaurants, restaurantId){
+        var restId = "";
+        restaurants.forEach(function(restaurant){
+          if(restaurant.id === restaurantId){
+            restId = restaurant.id;
+          }
+        })
+        return restId;
+      }
+      vm.foods = AllFoods.query(function(){
+        vm.foods.forEach(function(food){
+          food.restId = vm.getRestaurantID(vm.restaurants, food.restaurant_id);
+        })
       });
     }
   ]);
@@ -127,12 +152,6 @@
     return{
       restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",
-      // controller:function($scope){
-      //   $scope.processForm = function(){
-      //     $scope.formHidden = true;
-      //   };
-      // },
-      // controllerAs: 'formdir',
       scope: {
         restaurant: "=",
         formMethod: "@"

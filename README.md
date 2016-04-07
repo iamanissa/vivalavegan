@@ -25,7 +25,9 @@ Enjoy!
 
 
 ## Unsolved Problems:
--
+- Cannot add foods to a restaurant.
+- Ratings and Comments is not working.
+- On refresh things stop showing up. 
 
 
 ## To install on local computer:

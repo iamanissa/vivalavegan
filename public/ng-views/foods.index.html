@@ -1,11 +1,12 @@
-<h3>I'm the foods index page. Yay me!</h3>
+<h3>List of All Foods</h3>
 <div class="card-deck">
   <div class="cardlist">
     <div data-ng-repeat="food in foodIndexVM.foods" class="cardstyle">
       <img class="card-img-top img-rounded" ng-src="{{food.photo_url}}" alt="{{food.name}}">
       <div class="card-block">
         <h4 id="titlewrap" class="card-title">{{food.name}}</h4>
-        <p class="card-subtitle text-muted">{{food.restaurant.name}}</p>
+        <!-- <h6 class="card-subtitle text-muted">{{food.restaurantName}}</h6> -->
+        <p class="card-subtitle text-muted"><a data-ui-sref="show({id: food.restaurant_id})">{{food.restaurantName}}</a></p>
       </div>
     </div>
   </div>

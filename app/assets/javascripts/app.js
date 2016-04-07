@@ -18,7 +18,7 @@
     function ($stateProvider){
       $stateProvider
       .state("index", {
-        url: "/",
+        url: "",
         templateUrl: "ng-views/restaurant.index.html",
         controller: "indexCtrl",
         controllerAs: "indexVM"

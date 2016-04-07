@@ -140,7 +140,7 @@
     }
   ]);
 
-  function restaurantFormFunction(Restaurant, $state, $stateParams){
+  function restaurantFormFunction(Restaurant, $state){
     return{
       restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",

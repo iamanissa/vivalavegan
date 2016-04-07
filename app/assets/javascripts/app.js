@@ -18,7 +18,7 @@
     function ($stateProvider){
       $stateProvider
       .state("index", {
-        url: "",
+        url: "/",
         templateUrl: "ng-views/restaurant.index.html",
         controller: "indexCtrl",
         controllerAs: "indexVM"
@@ -34,7 +34,7 @@
         templateUrl: "ng-views/restaurant.show.html",
         controller: "showCtrl",
         controllerAs: "showVM"
-      })
+      });
     }
   ])
 
@@ -113,7 +113,7 @@
       // add destroy method for restaurant
       vm.destroy = function(index){
         vm.restaurants.splice(index, 1);
-      }
+      };
     }
   ])
   .controller("foodsIndexCtrl", [
@@ -158,7 +158,7 @@
           //  Restaurant.update({id: scope.restaurant.id}, scope.restaurant, function(response){
           //   console.log("Update Successful!");
           // });
-        }
+        };
       }
     };
   }

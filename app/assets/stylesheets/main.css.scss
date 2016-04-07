@@ -16,8 +16,18 @@ input{
 }
 
 .jumbotron {
-background-image: url("http://i.imgur.com/xEUHEQB.jpg");
+background-image: url("https://static.pexels.com/photos/65174/pexels-photo-65174.jpeg");
 background-size: cover;
+  h1 {
+  font-family: 'Tillana', cursive;
+  font-size: 75px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.5),
+               0px 8px 13px rgba(0,0,0,0.5),
+               0px 18px 23px rgba(0,0,0,0.5);
+  }
+  h1 a{
+    text-decoration:none;
+  }
 }
 
 .cardlist {

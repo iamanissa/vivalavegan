@@ -135,6 +135,7 @@
         var restId = "";
         restaurants.forEach(function(restaurant){
           if(restaurant.id === restaurantId){
+            console.log("yay it works!")
             restId = restaurant.id;
           }
         })
@@ -142,6 +143,7 @@
       }
       vm.foods = AllFoods.query(function(){
         vm.foods.forEach(function(food){
+          console.log("it kind of works?")
           food.restId = vm.getRestaurantID(vm.restaurants, food.restaurant_id);
         })
       });

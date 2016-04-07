@@ -129,24 +129,6 @@
           food.restaurantName = vm.getRestaurantName(vm.restaurants, food.restaurant_id);
         })
       });
-
-
-      vm.getRestaurantID = function(restaurants, restaurantId){
-        var restId = "";
-        restaurants.forEach(function(restaurant){
-          if(restaurant.id === restaurantId){
-            console.log("yay it works!")
-            restId = restaurant.id;
-          }
-        })
-        return restId;
-      }
-      vm.foods = AllFoods.query(function(){
-        vm.foods.forEach(function(food){
-          console.log("it kind of works?")
-          food.restId = vm.getRestaurantID(vm.restaurants, food.restaurant_id);
-        })
-      });
     }
   ]);
 

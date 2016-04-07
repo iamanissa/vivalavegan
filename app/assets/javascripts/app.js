@@ -40,6 +40,7 @@
 
   .directive("restaurantForm", [
     "RestaurantFactory",
+    "$state",
     restaurantFormFunction,
   ])
 
@@ -139,7 +140,7 @@
     }
   ]);
 
-  function restaurantFormFunction(Restaurant){
+  function restaurantFormFunction(Restaurant, $state, $stateParams){
     return{
       restrict: 'E',
       templateUrl: "ng-views/restaurant.form.html",
@@ -151,16 +152,14 @@
         scope.create = function(){
           Restaurant.save(scope.restaurant, function(response){
             Restaurant.all.push(response);
+          }).$promise.then(function(data){
+            $state.go("show", {id:data.id}, {reload: true});
           });
         };
         scope.update = function (){
-          // console.log(scope.restaurant);
           scope.restaurant.$update({id: scope.restaurant.id}, function(response){
             console.log(response);
           });
-          //  Restaurant.update({id: scope.restaurant.id}, scope.restaurant, function(response){
-          //   console.log("Update Successful!");
-          // });
         }
       }
     };
